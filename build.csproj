@@ -54,11 +54,12 @@
     <None Include="build\local_properties.rb" />
     <None Include="build\local_properties.rb.customize" />
     <None Include="build\project.rb" />
+    <None Include="fetch_latest" />
     <None Include="product\config\app.config.erb" />
     <None Include="product\config\hibernate.cfg.xml.erb" />
     <None Include="product\config\log4net.config.xml.erb" />
-    <None Include="product\sql\data\001\001_populate_foo.sql.template" />
-    <None Include="rakefile.rb" />
+    <None Include="push_latest_work.ps1" />
+    <None Include="start_new_exercise.ps1" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
@@ -81,7 +82,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="product\sql\data\001\" />
     <Folder Include="product\sql\ddl\001\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

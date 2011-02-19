@@ -13,7 +13,6 @@ _[Rr]e[Ss]harper.*
 *.sql
 *.swp
 *.swo
-local_properties.rb
 /product/docs/Help/*.*
 artifacts
 /product/config/app.config
@@ -25,4 +24,3 @@ artifacts
 /product/*.web.ui/*.config
 /product/*.web.ui/*.txt
 *.orig
-connection_details.rb

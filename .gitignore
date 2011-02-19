@@ -24,3 +24,5 @@ artifacts
 /product/*.web.ui/*.config
 /product/*.web.ui/*.txt
 *.orig
+local_properties.rb
+connection_details.rb

@@ -11,6 +11,7 @@ namespace nothinbutdotnetstore.specs
         {
             
         }
+
         public class when_created : concern
         {
             Establish c = () =>
@@ -33,7 +34,6 @@ namespace nothinbutdotnetstore.specs
 
             Because b = () =>
                 result = sut.add(2, 3);
-
 
             It should_open_a_connection_to_the_database = () =>
                 connection.received(x => x.Open());

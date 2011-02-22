@@ -6,10 +6,15 @@ namespace nothinbutdotnetstore
     {
         public static int add(int first, int second)
         {
-            if(first < 0 || second < 0)
-                throw new ArgumentException();
+            ensure_all_numbers_are_positive(first, second);
 
             return first + second;
+        }
+
+        static void ensure_all_numbers_are_positive(int first, int second)
+        {
+            if(first < 0 || second < 0)
+                throw new ArgumentException();
         }
     }
 }

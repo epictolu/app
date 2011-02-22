@@ -11,6 +11,18 @@ namespace nothinbutdotnetstore.specs
         {
             
         }
+        public class when_created : concern
+        {
+            Establish c = () =>
+            {
+                connection = the_dependency<IDbConnection>();
+            };
+
+            It should_not_open_the_connection_to_the_database = () =>
+                connection.never_received(x => x.Open());
+
+            static IDbConnection connection;
+        }
 
         public class when_adding_two_positive_numbers : concern
         {

@@ -7,11 +7,6 @@ namespace nothinbutdotnetstore
     {
         public Calculator(IDbConnection connection)
         {
-            open_database_connection(connection);
-        }
-
-        private void open_database_connection(IDbConnection connection)
-        {
             connection.Open();
         }
 

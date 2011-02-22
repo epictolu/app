@@ -4,7 +4,7 @@ namespace nothinbutdotnetstore
 {
     public class Calculator
     {
-        public static int add(int first, int second)
+        public int add(int first, int second)
         {
             ensure_all_numbers_are_positive(first, second);
 

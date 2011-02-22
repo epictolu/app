@@ -1,9 +1,20 @@
 using System;
+using System.Data;
 
 namespace nothinbutdotnetstore
 {
     public class Calculator
     {
+        public Calculator(IDbConnection connection)
+        {
+            open_database_connection(connection);
+        }
+
+        private void open_database_connection(IDbConnection connection)
+        {
+            connection.Open();
+        }
+
         public int add(int first, int second)
         {
             ensure_all_numbers_are_positive(first, second);

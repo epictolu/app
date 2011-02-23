@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Machine.Specifications.DevelopWithPassion.Rhino;
+using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.specs.utility;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.web.application;
@@ -28,12 +29,15 @@ namespace nothinbutdotnetstore.specs
             {
                 response_engine = the_sut_constructor_needs_a<ResponseEngine>();
                 department_repository = the_sut_constructor_needs_a<DepartmentRepository>();
+                parent_department = new Department();
+
                 request = an<Request>();
+                request.Stub(x => x.map<Department>()).Return(parent_department);
+
 
                 sub_departments = ObjectFactory.create_a_set_of(100, () => new Department());
 
-
-                department_repository.Stub(x => x.get_the_sub_departments())
+                department_repository.Stub(x => x.get_departments_belonging_to(parent_department))
                     .Return(sub_departments);
 
             };
@@ -52,6 +56,7 @@ namespace nothinbutdotnetstore.specs
             static Request request;
             static IEnumerable<Department> sub_departments;
             static ResponseEngine response_engine;
+            static Department parent_department;
         }
     }
 }

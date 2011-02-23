@@ -28,7 +28,7 @@ namespace nothinbutdotnetstore.web.application
 
         public void run(Request request)
         {
-            viewer.display(department_repository.get_the_sub_departments());
+            viewer.display(department_repository.get_departments_belonging_to(request.map<Department>()));
         }
 
     }

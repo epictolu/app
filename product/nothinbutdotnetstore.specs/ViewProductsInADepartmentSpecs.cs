@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Machine.Specifications.DevelopWithPassion.Rhino;
-using nothinbutdotnetstore.infrastructure;
+﻿using System.Collections.Generic;
+using Machine.Specifications;
 using nothinbutdotnetstore.specs.utility;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.web.application;
-
 using nothinbutdotnetstore.web.core;
- using Rhino.Mocks;
-using Machine.Specifications;
+using Rhino.Mocks;
+using RhinoMocksExtensions = Machine.Specifications.DevelopWithPassion.Rhino.RhinoMocksExtensions;
 
 namespace nothinbutdotnetstore.specs
 {
-    public class ViewDepartmentInADepartmentSpecs
+    public class ViewProductsInADepartmentSpec
     {
-        public abstract class concern : utility.Observes<ApplicationCommand,
-                                            ViewDepartmentInADepartment>
+        public abstract class concern : Observes<ApplicationCommand,
+                                            ViewProductsInADepartment>
         {
-
         }
 
-        [Subject(typeof(ViewDepartmentInADepartment))]
+        [Subject(typeof(ViewProductsInADepartment))]
         public class when_run : concern
         {
             Establish c = () =>
@@ -34,27 +28,21 @@ namespace nothinbutdotnetstore.specs
                 request = an<Request>();
                 request.Stub(x => x.map<Department>()).Return(parent_department);
 
+                products = ObjectFactory.create_a_set_of(100, () => new Product());
 
-                sub_departments = ObjectFactory.create_a_set_of(100, () => new Department());
-
-                store_catalog.Stub(x => x.get_departments_belonging_to(parent_department))
-                    .Return(sub_departments);
-
+                store_catalog.Stub(x => x.get_products_belonging_to(parent_department))
+                    .Return(products);
             };
 
             Because b = () =>
                 sut.run(request);
 
-            It should_display_the_list_of_sub_departments = () =>
-                response_engine.received(x => x.display(sub_departments));
-
-
-
-
+            It should_display_the_list_of_products = () =>
+                RhinoMocksExtensions.received(response_engine,x => x.display(products));
 
             static StoreCatalog store_catalog;
             static Request request;
-            static IEnumerable<Department> sub_departments;
+            static IEnumerable<Product> products;
             static ResponseEngine response_engine;
             static Department parent_department;
         }

@@ -8,23 +8,23 @@ namespace nothinbutdotnetstore.web.application
 {
     public class ViewMainDepartmentsInTheStore : ApplicationCommand
     {
-        DepartmentRepository department_repository;
+        StoreCatalog store_catalog;
         ResponseEngine viewer;
 
-        public ViewMainDepartmentsInTheStore():this(Stub.with<StubDepartmentRepository>(),
+        public ViewMainDepartmentsInTheStore():this(Stub.with<StubStoreCatalog>(),
             Stub.with<StubResponseEngine>())
         {
         }
 
-        public ViewMainDepartmentsInTheStore(DepartmentRepository department_repository, ResponseEngine viewer)
+        public ViewMainDepartmentsInTheStore(StoreCatalog store_catalog, ResponseEngine viewer)
         {
-            this.department_repository = department_repository;
+            this.store_catalog = store_catalog;
             this.viewer = viewer;
         }
 
         public void run(Request request)
         {
-            viewer.display(department_repository.get_the_main_departments());
+            viewer.display(store_catalog.get_the_main_departments());
         }
     }
 }

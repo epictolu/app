@@ -1,6 +1,6 @@
 namespace nothinbutdotnetstore.specs.utility
 {
-    public class Observes<Contract, Implementation> :
+    public class ItObserves<Contract, Implementation> :
         Machine.Specifications.DevelopWithPassion.Rhino.Observes<Contract, Implementation>
         where Implementation : Contract
     {

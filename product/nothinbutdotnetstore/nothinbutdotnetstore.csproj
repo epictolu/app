@@ -88,7 +88,7 @@
     <Compile Include="tasks\ItemQuery.cs" />
     <Compile Include="tasks\StoreCatalog.cs" />
     <Compile Include="tasks\stubs\StubStoreCatalog.cs" />
-    <Compile Include="web\application\QueryFor.cs" />
+    <Compile Include="web\core\QueryFor.cs" />
     <Compile Include="web\application\StoreCatalogController.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\Product.cs" />
@@ -101,6 +101,7 @@
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
     <Compile Include="web\core\DefaultFrontController.cs" />
     <Compile Include="web\core\DefaultRequestCommand.cs" />
+    <Compile Include="web\core\DispatchingCommand.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\ItemViewer .cs" />
     <Compile Include="web\core\MissingRequestCommand.cs" />
@@ -108,7 +109,7 @@
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestFactory.cs" />
-    <Compile Include="web\core\stubs\CatalogQueries.cs" />
+    <Compile Include="web\core\stubs\StoreCatalogQueries.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />

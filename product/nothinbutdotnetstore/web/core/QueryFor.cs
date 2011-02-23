@@ -1,9 +1,8 @@
 using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.web.core;
 using nothinbutdotnetstore.web.core.stubs;
 
-namespace nothinbutdotnetstore.web.application
+namespace nothinbutdotnetstore.web.core
 {
     public class QueryFor<ReportModel> : ApplicationCommand
     {

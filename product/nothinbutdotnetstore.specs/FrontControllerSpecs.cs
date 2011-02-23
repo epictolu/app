@@ -1,14 +1,14 @@
 using Machine.Specifications;
+using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.specs.utility;
 using nothinbutdotnetstore.web.core;
 using Rhino.Mocks;
-using RhinoMocksExtensions = Machine.Specifications.DevelopWithPassion.Rhino.RhinoMocksExtensions;
 
 namespace nothinbutdotnetstore.specs
 {
     public class FrontControllerSpecs
     {
-        public abstract class concern : Observes<FrontController,
+        public abstract class concern : ItObserves<FrontController,
                                             DefaultFrontController>
         {
         }
@@ -31,7 +31,7 @@ namespace nothinbutdotnetstore.specs
                 sut.process(request);
 
             It should_delegate_the_processing_to_the_command_that_can_run_the_request = () =>
-                RhinoMocksExtensions.received(command_that_can_run_request, x => x.run(request));
+                command_that_can_run_request.received(x => x.run(request));
 
             static RequestCommand command_that_can_run_request;
             static Request request;

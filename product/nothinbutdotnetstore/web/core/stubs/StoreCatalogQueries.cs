@@ -5,15 +5,15 @@ using nothinbutdotnetstore.web.application;
 
 namespace nothinbutdotnetstore.web.core.stubs
 {
-    public class CatalogQueries
+    public class StoreCatalogQueries
     {
         StoreCatalog catalog;
 
-        public CatalogQueries():this(new StubStoreCatalog())
+        public StoreCatalogQueries():this(new StubStoreCatalog())
         {
         }
 
-        public CatalogQueries(StoreCatalog catalog)
+        public StoreCatalogQueries(StoreCatalog catalog)
         {
             this.catalog = catalog;
         }

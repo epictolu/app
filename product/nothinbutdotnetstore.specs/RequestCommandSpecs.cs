@@ -7,7 +7,7 @@ namespace nothinbutdotnetstore.specs
 {   
     public class RequestCommandSpecs
     {
-        public abstract class concern : utility.Observes<RequestCommand,
+        public abstract class concern : utility.ItObserves<RequestCommand,
                                             DefaultRequestCommand>
         {
         

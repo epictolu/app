@@ -16,7 +16,7 @@ namespace nothinbutdotnetstore.specs
 {
     public class ViewDepartmentInADepartmentSpecs
     {
-        public abstract class concern : utility.Observes<ApplicationCommand,
+        public abstract class concern : utility.ItObserves<ApplicationCommand,
                                             ViewDepartmentInADepartment>
         {
 

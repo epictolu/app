@@ -6,12 +6,12 @@ using System.Web;
 
 namespace nothinbutdotnetstore.specs.utility
 {
-    public delegate T ObjectFactory<out T>();
+    public delegate T ItemFactory<out T>();
 
     public class ObjectFactory
     {
         public static IEnumerable<T> create_a_set_of<T>(int number,
-                                                        ObjectFactory<T> factory)
+                                                        ItemFactory<T> factory)
         {
             return Enumerable.Range(1, number).Select(x => factory());
         }

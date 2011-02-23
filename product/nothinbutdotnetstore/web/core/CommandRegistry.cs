@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace nothinbutdotnetstore.web.core
 {
     public interface CommandRegistry

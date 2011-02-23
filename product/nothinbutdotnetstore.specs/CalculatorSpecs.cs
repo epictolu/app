@@ -5,6 +5,7 @@ using System.Security;
 using System.Security.Principal;
 using System.Threading;
 using Machine.Specifications;
+using Machine.Specifications.DevelopWithPassion.Extensions;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using Rhino.Mocks;
 
@@ -26,7 +27,7 @@ namespace nothinbutdotnetstore.specs
             static List<int> values;
         }
 
-        [Ignore]
+        [Ignore("")]
         [Subject(typeof(DefaultCalculator))]
         public class when_created : concern
         {
@@ -38,7 +39,7 @@ namespace nothinbutdotnetstore.specs
             static IDbConnection connection;
         }
 
-        [Ignore]
+        [Ignore("")]
         [Subject(typeof(DefaultCalculator))]
         public class when_adding_two_positive_numbers : concern
         {
@@ -74,7 +75,7 @@ namespace nothinbutdotnetstore.specs
             static IDbCommand command;
         }
 
-        [Ignore]
+        [Ignore("")]
         [Subject(typeof(DefaultCalculator))]
         public class when_attempting_to_add_a_negative_number : concern
         {
@@ -85,7 +86,7 @@ namespace nothinbutdotnetstore.specs
                 exception_thrown_by_the_sut.ShouldBeAn<ArgumentException>();
         }
 
-        [Ignore]
+        [Ignore("")]
         [Subject(typeof(DefaultCalculator))]
         public class when_shutting_down_the_calculator_and_they_are_not_in_the_correct_security_group : concern
         {

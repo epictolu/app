@@ -85,12 +85,15 @@
     <Compile Include="DefaultCalculator.cs" />
     <Compile Include="infrastructure\Stub.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="tasks\ItemQuery.cs" />
     <Compile Include="tasks\StoreCatalog.cs" />
     <Compile Include="tasks\stubs\StubStoreCatalog.cs" />
+    <Compile Include="web\application\QueryFor.cs" />
+    <Compile Include="web\application\StoreCatalogController.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\Product.cs" />
     <Compile Include="web\application\Department.cs" />
-    <Compile Include="web\application\ViewDepartmentInADepartment.cs" />
+    <Compile Include="web\application\ViewDepartmentsInADepartment.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\ApplicationCommand .cs" />
     <Compile Include="web\core\aspnet\BasicHandler.cs" />
@@ -105,6 +108,7 @@
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestFactory.cs" />
+    <Compile Include="web\core\stubs\CatalogQueries.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />

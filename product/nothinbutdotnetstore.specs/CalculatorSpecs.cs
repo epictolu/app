@@ -7,36 +7,29 @@ using System.Threading;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using Rhino.Mocks;
-using Rhino.Mocks.Constraints;
 
 namespace nothinbutdotnetstore.specs
 {
     public class CalculatorSpecs
     {
-        public abstract class concern : Observes<Calculator>
+        public abstract class concern : Observes<Calculator,DefaultCalculator>
         {
             Establish c = () =>
             {
                 values = new List<int>();
-//                provide_a_basic_sut_constructor_argument(23);        
-//                provide_a_basic_sut_constructor_argument(values);        
-//                create_sut_using(() => new Calculator(connection,
-//                    reader,2,values,3));
-
-
+                //                provide_a_basic_sut_constructor_argument(23);        
+                //                provide_a_basic_sut_constructor_argument(values);        
+                //                create_sut_using(() => new Calculator(connection,
+                //                    reader,2,values,3));
             };
 
             static List<int> values;
         }
 
-
-        [Subject(typeof(Calculator))]
+        [Subject(typeof(DefaultCalculator))]
         public class when_created : concern
         {
-            Establish c = () =>
-            {
-                connection = the_dependency<IDbConnection>();
-            };
+            Establish c = () => { connection = the_dependency<IDbConnection>(); };
 
             It should_not_open_the_connection_to_the_database = () =>
                 connection.never_received(x => x.Open());
@@ -44,7 +37,7 @@ namespace nothinbutdotnetstore.specs
             static IDbConnection connection;
         }
 
-        [Subject(typeof(Calculator))]
+        [Subject(typeof(DefaultCalculator))]
         public class when_adding_two_positive_numbers : concern
         {
             Establish c = () =>
@@ -79,7 +72,7 @@ namespace nothinbutdotnetstore.specs
             static IDbCommand command;
         }
 
-        [Subject(typeof(Calculator))]
+        [Subject(typeof(DefaultCalculator))]
         public class when_attempting_to_add_a_negative_number : concern
         {
             Because b = () =>
@@ -89,7 +82,7 @@ namespace nothinbutdotnetstore.specs
                 exception_thrown_by_the_sut.ShouldBeAn<ArgumentException>();
         }
 
-        [Subject(typeof(Calculator))]
+        [Subject(typeof(DefaultCalculator))]
         public class when_shutting_down_the_calculator_and_they_are_not_in_the_correct_security_group : concern
         {
             Establish c = () =>
@@ -110,7 +103,8 @@ namespace nothinbutdotnetstore.specs
 
             static IPrincipal fake_principal;
         }
-        public class when_shutting_down_the_calculator_and_they_are_in_the_correct_role: concern
+
+        public class when_shutting_down_the_calculator_and_they_are_in_the_correct_role : concern
         {
             Establish c = () =>
             {
@@ -125,11 +119,7 @@ namespace nothinbutdotnetstore.specs
             Because b = () =>
                 sut.shut_off();
 
-            It should_not_do_anything = () =>
-            {
-
-            };
-
+            It should_not_do_anything = () => { };
 
             static IPrincipal fake_principal;
         }

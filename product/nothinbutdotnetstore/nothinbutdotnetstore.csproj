@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="DefaultCalculator.cs" />
+    <Compile Include="infrastructure\Stub.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="tasks\DepartmentRepository.cs" />
     <Compile Include="tasks\stubs\StubDepartmentRepository.cs" />

@@ -59,6 +59,7 @@
     <None Include="product\config\hibernate.cfg.xml.erb" />
     <None Include="product\config\log4net.config.xml.erb" />
     <None Include="product\config\our_custom_config.txt.erb" />
+    <None Include="product\docs\project_conventions.markdown" />
     <None Include="push_latest_work.ps1" />
     <None Include="rakefile.rb" />
     <None Include="start_new_exercise.ps1" />

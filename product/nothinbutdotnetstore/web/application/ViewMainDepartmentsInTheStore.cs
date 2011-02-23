@@ -1,3 +1,4 @@
+using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.core;
@@ -10,8 +11,8 @@ namespace nothinbutdotnetstore.web.application
         DepartmentRepository department_repository;
         ResponseEngine viewer;
 
-        public ViewMainDepartmentsInTheStore():this(new StubDepartmentRepository(),
-            new StubResponseEngine())
+        public ViewMainDepartmentsInTheStore():this(Stub.with<StubDepartmentRepository>(),
+            Stub.with<StubResponseEngine>())
         {
         }
 

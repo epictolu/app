@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using nothinbutdotnetstore.infrastructure;
+﻿using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.core;
@@ -12,24 +8,23 @@ namespace nothinbutdotnetstore.web.application
 {
     public class ViewProductsInADepartment : ApplicationCommand
     {
-        ProductRepository product_repository;
+        StoreCatalog store_catalog;
         ResponseEngine viewer;
 
-        public ViewProductsInADepartment():this(Stub.with<StubProductRepository>(),
-            Stub.with<StubResponseEngine>())
+        public ViewProductsInADepartment() : this(Stub.with<StubStoreCatalog>(),
+                                                  Stub.with<StubResponseEngine>())
         {
         }
 
-        public ViewProductsInADepartment(ProductRepository product_repository, ResponseEngine viewer)
+        public ViewProductsInADepartment(StoreCatalog store_catalog, ResponseEngine viewer)
         {
-            this.product_repository = product_repository;
+            this.store_catalog = store_catalog;
             this.viewer = viewer;
         }
 
         public void run(Request request)
         {
-            viewer.display(product_repository.get_products_belonging_to(request.map<Department>()));
+            viewer.display(store_catalog.get_products_belonging_to(request.map<Department>()));
         }
-
     }
 }

@@ -9,7 +9,6 @@ namespace nothinbutdotnetstore.web.core.stubs
         public IEnumerator<RequestCommand> GetEnumerator()
         {
             yield return new DefaultRequestCommand(x => true,
-              //new ViewDepartmentInADepartment());
             new ViewProductsInADepartment());
         }
 

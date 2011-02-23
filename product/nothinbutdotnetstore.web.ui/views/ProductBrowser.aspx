@@ -2,6 +2,7 @@
 <%@ Page Language="c#" AutoEventWireup="true" 
 Inherits="nothinbutdotnetstore.web.ui.views.ProductBrowser"
 CodeFile="ProductBrowser.aspx.cs" MasterPageFile="Store.master" %>
+<%@ Import Namespace="nothinbutdotnetstore.web.application" %>
 
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
     <form></form>
@@ -17,17 +18,21 @@ CodeFile="ProductBrowser.aspx.cs" MasterPageFile="Store.master" %>
                         <th></th>
                     </tr>
                 </thead>
-   <!-- each product --> 
+              <% foreach (var product in ((IEnumerable<Product>)this.Context.Items["blah"]))
+                 {%>
         <tr class="nonShadedRow">                    
             <td class="ListItem">                    
-                <a href='Replace with a link to the detail page for the product'>Product Name</a>
+                <a href='#'><%=product.name%></a>
             </td>
-            <td>Replace with product description</td>
+            <td><%= product.description %></td>
             <td><input type="text" class="normalTextBox" value="1" /></td>
-            <td>0.00</td>               
+            <td><%= product.price.ToString("C") %></td>               
             <td><input type="checkbox" class="normalCheckBox" /></td>
             <td><input type="button" value="Add To cart"/></td>
+
         </tr>
+        <%
+                 }%>
     						
     	</table>	
 								<table>
@@ -40,6 +45,7 @@ CodeFile="ProductBrowser.aspx.cs" MasterPageFile="Store.master" %>
                       <input type="button" value="Continue to checkout" />
 										</td>
 									</tr>
+
 								</table>							
 								    
 								

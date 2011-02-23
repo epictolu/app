@@ -28,7 +28,7 @@ namespace nothinbutdotnetstore.specs
             Establish c = () =>
             {
                 response_engine = the_sut_constructor_needs_a<ResponseEngine>();
-                department_repository = the_sut_constructor_needs_a<DepartmentRepository>();
+                store_catalog = the_sut_constructor_needs_a<StoreCatalog>();
                 parent_department = new Department();
 
                 request = an<Request>();
@@ -37,7 +37,7 @@ namespace nothinbutdotnetstore.specs
 
                 sub_departments = ObjectFactory.create_a_set_of(100, () => new Department());
 
-                department_repository.Stub(x => x.get_departments_belonging_to(parent_department))
+                store_catalog.Stub(x => x.get_departments_belonging_to(parent_department))
                     .Return(sub_departments);
 
             };
@@ -52,7 +52,7 @@ namespace nothinbutdotnetstore.specs
 
 
 
-            static DepartmentRepository department_repository;
+            static StoreCatalog store_catalog;
             static Request request;
             static IEnumerable<Department> sub_departments;
             static ResponseEngine response_engine;

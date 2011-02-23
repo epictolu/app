@@ -85,10 +85,8 @@
     <Compile Include="DefaultCalculator.cs" />
     <Compile Include="infrastructure\Stub.cs" />
     <Compile Include="MessageGenerator.cs" />
-    <Compile Include="tasks\ProductRepository.cs" />
-    <Compile Include="tasks\DepartmentRepository.cs" />
-    <Compile Include="tasks\stubs\StubProductRepository.cs" />
-    <Compile Include="tasks\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="tasks\StoreCatalog.cs" />
+    <Compile Include="tasks\stubs\StubStoreCatalog.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\Product.cs" />
     <Compile Include="web\application\Department.cs" />

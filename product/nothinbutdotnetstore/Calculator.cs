@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Security;
+using System.Threading;
 
 namespace nothinbutdotnetstore
 {
@@ -7,7 +10,7 @@ namespace nothinbutdotnetstore
     {
         IDbConnection connection;
 
-        public Calculator(IDbConnection connection)
+        public Calculator(IDbConnection connection,IDataReader data_reader)
         {
             this.connection = connection;
         }
@@ -30,6 +33,18 @@ namespace nothinbutdotnetstore
         {
             if(first < 0 || second < 0)
                 throw new ArgumentException();
+        }
+
+        public void shut_off()
+        {
+            ensure_is_in_correct_role();
+        }
+
+        void ensure_is_in_correct_role()
+        {
+            if (Thread.CurrentPrincipal.IsInRole("blah")) return;
+
+            throw new SecurityException();
         }
     }
 }

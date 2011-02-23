@@ -10,7 +10,7 @@ namespace nothinbutdotnetstore.specs
 {   
     public class BasicHandlerSpecs
     {
-        public abstract class concern : Observes<IHttpHandler,
+        public abstract class concern : Machine.Specifications.DevelopWithPassion.Rhino.Observes<IHttpHandler,
                                             BasicHandler>
         {
         

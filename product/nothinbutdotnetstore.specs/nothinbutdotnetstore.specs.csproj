@@ -111,6 +111,7 @@
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="utility\Observes.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

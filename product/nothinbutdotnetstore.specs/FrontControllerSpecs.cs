@@ -1,5 +1,6 @@
  using Machine.Specifications;
  using Machine.Specifications.DevelopWithPassion.Rhino;
+ using nothinbutdotnetstore.specs.utility;
  using nothinbutdotnetstore.web.core;
  using Rhino.Mocks;
 
@@ -7,7 +8,7 @@ namespace nothinbutdotnetstore.specs
 {   
     public class FrontControllerSpecs
     {
-        public abstract class concern : Observes<FrontController,
+        public abstract class concern : utility.Observes<FrontController,
                                             DefaultFrontController>
         {
         
@@ -18,7 +19,7 @@ namespace nothinbutdotnetstore.specs
         {
             Establish c = () =>
             {
-                command_registry = the_dependency<CommandRegistry>();
+                command_registry = the_sut_constructor_needs_a<CommandRegistry>();
 
                 request = an<Request>();
                 command_that_can_run_request = an<RequestCommand>();

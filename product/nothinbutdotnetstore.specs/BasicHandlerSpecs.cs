@@ -25,7 +25,7 @@ namespace nothinbutdotnetstore.specs
                 request_factory = the_dependency<RequestFactory>();
 
                 request = an<Request>();
-                incoming_context = ObjectFactory.create_http_context();
+                incoming_context = ObjectFactory.Web.create_http_context();
 
                 request_factory.Stub(x => x.create_request_from(incoming_context))
                     .Return(request);

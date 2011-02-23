@@ -80,6 +80,10 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="DefaultCalculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="tasks\DepartmentRepository.cs" />
+    <Compile Include="tasks\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="web\application\Department.cs" />
+    <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\ApplicationCommand .cs" />
     <Compile Include="web\core\aspnet\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
@@ -87,11 +91,15 @@
     <Compile Include="web\core\DefaultFrontController.cs" />
     <Compile Include="web\core\DefaultRequestCommand.cs" />
     <Compile Include="web\core\FrontController.cs" />
+    <Compile Include="web\core\ItemViewer .cs" />
     <Compile Include="web\core\MissingRequestCommand.cs" />
     <Compile Include="web\core\Request.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestFactory.cs" />
+    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
+    <Compile Include="web\core\stubs\StubResponseEngine.cs" />
+    <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

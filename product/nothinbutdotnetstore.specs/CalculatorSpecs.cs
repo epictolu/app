@@ -26,6 +26,7 @@ namespace nothinbutdotnetstore.specs
             static List<int> values;
         }
 
+        [Ignore]
         [Subject(typeof(DefaultCalculator))]
         public class when_created : concern
         {
@@ -37,6 +38,7 @@ namespace nothinbutdotnetstore.specs
             static IDbConnection connection;
         }
 
+        [Ignore]
         [Subject(typeof(DefaultCalculator))]
         public class when_adding_two_positive_numbers : concern
         {
@@ -72,6 +74,7 @@ namespace nothinbutdotnetstore.specs
             static IDbCommand command;
         }
 
+        [Ignore]
         [Subject(typeof(DefaultCalculator))]
         public class when_attempting_to_add_a_negative_number : concern
         {
@@ -82,6 +85,7 @@ namespace nothinbutdotnetstore.specs
                 exception_thrown_by_the_sut.ShouldBeAn<ArgumentException>();
         }
 
+        [Ignore]
         [Subject(typeof(DefaultCalculator))]
         public class when_shutting_down_the_calculator_and_they_are_not_in_the_correct_security_group : concern
         {
@@ -104,6 +108,7 @@ namespace nothinbutdotnetstore.specs
             static IPrincipal fake_principal;
         }
 
+        [Ignore]
         public class when_shutting_down_the_calculator_and_they_are_in_the_correct_role : concern
         {
             Establish c = () =>

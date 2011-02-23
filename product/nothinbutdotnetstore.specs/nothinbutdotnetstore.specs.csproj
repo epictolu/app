@@ -116,6 +116,7 @@
     <Compile Include="StubSpecs.cs" />
     <Compile Include="utility\Observes.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
+    <Compile Include="ViewDepartmentInADepartmentSpecs.cs" />
     <Compile Include="ViewMainDepartmentsInTheStoreSpecs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

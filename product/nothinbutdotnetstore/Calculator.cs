@@ -5,18 +5,23 @@ namespace nothinbutdotnetstore
 {
     public class Calculator
     {
-        private IDbConnection dbConnection;
+        IDbConnection connection;
 
         public Calculator(IDbConnection connection)
         {
-            dbConnection = connection;
+            this.connection = connection;
         }
 
         public int add(int first, int second)
         {
             ensure_all_numbers_are_positive(first, second);
 
-            dbConnection.Open();
+            using (connection)
+            using(var command = connection.CreateCommand())
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
 
             return first + second;
         }

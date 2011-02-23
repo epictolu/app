@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
+using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs
 {
@@ -9,15 +10,12 @@ namespace nothinbutdotnetstore.specs
     {
         public abstract class concern : Observes<Calculator>
         {
-            
         }
 
+        [Subject(typeof(Calculator))]
         public class when_created : concern
         {
-            Establish c = () =>
-            {
-                connection = the_dependency<IDbConnection>();
-            };
+            Establish c = () => { connection = the_dependency<IDbConnection>(); };
 
             It should_not_open_the_connection_to_the_database = () =>
                 connection.never_received(x => x.Open());
@@ -25,11 +23,16 @@ namespace nothinbutdotnetstore.specs
             static IDbConnection connection;
         }
 
+        [Subject(typeof(Calculator))]
         public class when_adding_two_positive_numbers : concern
         {
             Establish c = () =>
             {
                 connection = the_dependency<IDbConnection>();
+                command = an<IDbCommand>();
+
+                connection.Stub(x => x.CreateCommand())
+                    .Return(command);
             };
 
             Because b = () =>
@@ -37,13 +40,22 @@ namespace nothinbutdotnetstore.specs
 
             It should_open_a_connection_to_the_database = () =>
                 connection.received(x => x.Open());
-  
+
+            It should_run_a_query = () =>
+                command.received(x => x.ExecuteNonQuery());
+
+            It should_dispose_both_the_command_and_connection = () =>
+            {
+                connection.received(x => x.Dispose());
+                command.received(x => x.Dispose());
+            };
+
             It should_return_the_sum = () =>
                 result.ShouldEqual(5);
 
-
             static int result;
             static IDbConnection connection;
+            static IDbCommand command;
         }
 
         [Subject(typeof(Calculator))]
@@ -52,12 +64,8 @@ namespace nothinbutdotnetstore.specs
             Because b = () =>
                 catch_exception(() => sut.add(2, -1));
 
-
             It should_not_allow_it_to_occur = () =>
                 exception_thrown_by_the_sut.ShouldBeAn<ArgumentException>();
-                
         }
-
-        
     }
 }

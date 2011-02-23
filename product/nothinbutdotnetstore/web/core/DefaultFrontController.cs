@@ -4,7 +4,8 @@ namespace nothinbutdotnetstore.web.core
 {
     public class DefaultFrontController : FrontController
     {
-        private CommandRegistry command_registry;
+        CommandRegistry command_registry;
+        RequestCommand request_command;
 
         public DefaultFrontController(CommandRegistry registry)
         {
@@ -13,9 +14,8 @@ namespace nothinbutdotnetstore.web.core
 
         public void process(Request request)
         {
-            RequestCommand rc = this.command_registry.get_command_that_can_process(request);
-            rc.run(request);
-            //throw new NotImplementedException();
+            this.request_command = this.command_registry.get_command_that_can_process(request);
+            this.request_command.run(request);
         }
     }
 }

@@ -98,6 +98,8 @@
     <Compile Include="web\core\aspnet\WebFormResponseEngine.cs" />
     <Compile Include="web\core\aspnet\CurrentContextResolver.cs" />
     <Compile Include="web\core\aspnet\WebFormViewFactory.cs" />
+    <Compile Include="web\core\Log.cs" />
+    <Compile Include="web\core\LoggingRequestFactory.cs" />
     <Compile Include="web\core\QueryFor.cs" />
     <Compile Include="web\application\StoreCatalogController.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />

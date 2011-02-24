@@ -1,13 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
-using System.Web.Configuration;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.infrastructure;
-using Machine.Specifications.DevelopWithPassion.Extensions;
-using nothinbutdotnetstore.specs.utility;
 using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs
@@ -25,7 +20,6 @@ namespace nothinbutdotnetstore.specs
             Establish c = () =>
             {
                 rule_set = the_dependency<RuleSet<Person>>();
-                error_message = "blah";
                 person = new Person();
                 notifications = new FakeNotifications();
                 errors = new List<string> {"1", "2"};
@@ -36,15 +30,11 @@ namespace nothinbutdotnetstore.specs
                 rule_set.Stub(x => x.all_messages()).Return(errors);
             };
 
-
             Because b = () =>
                 sut.validate(person, notifications);
 
-            It should_add_the_message_of_each_of_the_broken_rules_to_the_notifications = () =>
-            {
-
-            };
-
+            It should_add_the_message_of_each_of_the_broken_rules_to_the_notifications =
+                () => { notifications.contains_errors().ShouldBeTrue(); };
 
             static Notifications notifications;
             static Person person;
@@ -55,15 +45,19 @@ namespace nothinbutdotnetstore.specs
 
         public class FakeNotifications : Notifications
         {
+            bool has_errors;
+
             public bool contains_errors()
             {
-                return true;
+                return has_errors;
             }
 
             public void add_error(string message)
             {
+                has_errors = true;
             }
         }
+
         public class Person
         {
         }

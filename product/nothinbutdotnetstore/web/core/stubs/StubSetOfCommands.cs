@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.web.application;
 
 namespace nothinbutdotnetstore.web.core.stubs
 {
@@ -10,11 +8,14 @@ namespace nothinbutdotnetstore.web.core.stubs
     {
         public IEnumerator<RequestCommand> GetEnumerator()
         {
-            yield return create_command_to_view(new StoreCatalogQueries().get_departments_belonging_to);
-            yield return create_command_to_view(new StoreCatalogQueries().get_products_belonging_to);
-            yield return create_command_to_view(new StoreCatalogQueries().main_departments);
-            yield return new DefaultRequestCommand(x => true,
-                                                   new DispatchingCommand()); 
+            yield return create_command_to_view(
+                new StoreCatalogQueries().get_products_belonging_to_department);
+
+            yield return create_command_to_view(
+                new StoreCatalogQueries().get_departments_belonging_to_department);
+
+            yield return create_command_to_view(
+                new StoreCatalogQueries().get_main_departments);
         }
 
         RequestCommand create_command_to_view<ReportModel>(ItemQuery<ReportModel> query)

@@ -88,6 +88,7 @@
     <Compile Include="tasks\ItemQuery.cs" />
     <Compile Include="tasks\StoreCatalog.cs" />
     <Compile Include="tasks\stubs\StubStoreCatalog.cs" />
+    <Compile Include="web\core\aspnet\ViewLocator.cs" />
     <Compile Include="web\core\aspnet\WebFormResponseEngine.cs" />
     <Compile Include="web\core\QueryFor.cs" />
     <Compile Include="web\application\StoreCatalogController.cs" />

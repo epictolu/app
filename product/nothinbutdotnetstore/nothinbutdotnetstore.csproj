@@ -83,11 +83,23 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="DefaultCalculator.cs" />
+    <Compile Include="infrastructure\DefaultValidationGateway.cs" />
+    <Compile Include="infrastructure\DefaultValidator.cs" />
+    <Compile Include="infrastructure\NotificationFactory.cs" />
+    <Compile Include="infrastructure\Notifications.cs" />
     <Compile Include="infrastructure\Stub.cs" />
+    <Compile Include="infrastructure\UnitOfWork.cs" />
+    <Compile Include="infrastructure\ValidationGateway.cs" />
+    <Compile Include="infrastructure\Validator.cs" />
+    <Compile Include="infrastructure\ValidatorRegistry.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="model\Customer.cs" />
+    <Compile Include="tasks\CustomerTasks.cs" />
+    <Compile Include="tasks\DefaultCustomerTasks.cs" />
     <Compile Include="tasks\ItemQuery.cs" />
     <Compile Include="tasks\StoreCatalog.cs" />
     <Compile Include="tasks\stubs\StubStoreCatalog.cs" />
+    <Compile Include="web\application\AddNewCustomer.cs" />
     <Compile Include="web\core\aspnet\BasicViewFor.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

@@ -88,8 +88,16 @@
     <Compile Include="tasks\ItemQuery.cs" />
     <Compile Include="tasks\StoreCatalog.cs" />
     <Compile Include="tasks\stubs\StubStoreCatalog.cs" />
-    <Compile Include="web\core\aspnet\ViewLocator.cs" />
+    <Compile Include="web\core\aspnet\BasicViewFor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\core\aspnet\PageFactory.cs" />
+    <Compile Include="web\core\aspnet\ViewFor.cs" />
+    <Compile Include="web\core\aspnet\ViewFactory.cs" />
+    <Compile Include="web\core\aspnet\ViewPathRegistry.cs" />
     <Compile Include="web\core\aspnet\WebFormResponseEngine.cs" />
+    <Compile Include="web\core\aspnet\CurrentContextResolver.cs" />
+    <Compile Include="web\core\aspnet\WebFormViewFactory.cs" />
     <Compile Include="web\core\QueryFor.cs" />
     <Compile Include="web\application\StoreCatalogController.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
@@ -113,8 +121,8 @@
     <Compile Include="web\core\RequestFactory.cs" />
     <Compile Include="web\core\stubs\StoreCatalogQueries.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
-    <Compile Include="web\core\stubs\StubResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
+    <Compile Include="web\core\stubs\StubViewPathRegistry.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

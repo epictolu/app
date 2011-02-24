@@ -1,55 +1,60 @@
- using Machine.Specifications;
- using Machine.Specifications.DevelopWithPassion.Rhino;
- using nothinbutdotnetstore.web.core;
- using nothinbutdotnetstore.web.core.aspnet;
+using System.Web;
+using Machine.Specifications;
+using Machine.Specifications.DevelopWithPassion.Rhino;
+using nothinbutdotnetstore.specs.utility;
+using nothinbutdotnetstore.web.core;
+using nothinbutdotnetstore.web.core.aspnet;
+using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs
-{   
+{
     public class WebFormResponseEngineSpecs
     {
         public abstract class concern : Observes<ResponseEngine,
                                             WebFormResponseEngine>
         {
-        
         }
 
         [Subject(typeof(WebFormResponseEngine))]
         public class when_displaying_a_report_model : concern
         {
-            private Establish c = () =>
-                                      {
-                                          model = an<object>();
-                                          locator = the_dependency<ViewLocator>();
-                                          response= new WebFormResponseEngine(locator);
-                                          //pass in a ViewLocator
-                                      };
-
-            private Because b = () =>
-                                    {
-                                        response.display(model);
-                                    };
-
-
-            It should_locate_the_matching_view = () =>
+            Establish c = () =>
             {
-                //call to a view locator
+                view = an<ViewFor<OurModelToDisplay>>();
+                model = new OurModelToDisplay();
+                factory = the_dependency<ViewFactory>();
+                current_context = ObjectFactory.Web.create_http_context();
+
+                factory.Stub(x => x.create_view_for(model))
+                    .Return(view);
+
+                provide_a_basic_sut_constructor_argument<CurrentContextResolver>(() => current_context);
+
+
             };
 
-            It should_save_the_context_for_the_view = () =>
-                                                                  {
-                //this may be hard to test
-                //call to ViewContext.Save
-                                                                  };
+            Because b = () =>
+                sut.display(model);
 
-            private It should_request_the_view_to_render_itself = () =>
-                                                                      {
-                //call to view.render()
-                                                                      };
 
-            private static ResponseEngine response;
-            private static object model;
-            private static ViewLocator locator;
+            It should_locate_the_view_that_can_display_the_report_model = () =>
+            {
+            };
+
+
+            It should_tell_the_view_to_render_itself = () =>
+                view.received(x => x.ProcessRequest(current_context));
+  
+
+
+            static OurModelToDisplay model;
+            static ViewFactory factory;
+            static ViewFor<OurModelToDisplay> view;
+            static HttpContext current_context;
         }
 
+        public class OurModelToDisplay
+        {
+        }
     }
 }

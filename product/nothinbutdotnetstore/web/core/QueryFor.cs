@@ -1,6 +1,5 @@
-using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.web.core.stubs;
+using nothinbutdotnetstore.web.core.aspnet;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -9,8 +8,8 @@ namespace nothinbutdotnetstore.web.core
         ResponseEngine response_engine;
         ItemQuery<ReportModel> query;
 
-        public QueryFor(ItemQuery<ReportModel> query):this(Stub.with<StubResponseEngine>(),
-            query)
+        public QueryFor(ItemQuery<ReportModel> query):this(
+            new WebFormResponseEngine(),query)
         {
         }
 

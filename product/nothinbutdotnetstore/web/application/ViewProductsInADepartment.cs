@@ -2,7 +2,6 @@
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.core;
-using nothinbutdotnetstore.web.core.stubs;
 
 namespace nothinbutdotnetstore.web.application
 {
@@ -11,10 +10,6 @@ namespace nothinbutdotnetstore.web.application
         StoreCatalog store_catalog;
         ResponseEngine viewer;
 
-        public ViewProductsInADepartment() : this(Stub.with<StubStoreCatalog>(),
-                                                  Stub.with<StubResponseEngine>())
-        {
-        }
 
         public ViewProductsInADepartment(StoreCatalog store_catalog, ResponseEngine viewer)
         {

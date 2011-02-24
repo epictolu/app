@@ -87,6 +87,7 @@
     <Compile Include="infrastructure\DefaultValidator.cs" />
     <Compile Include="infrastructure\NotificationFactory.cs" />
     <Compile Include="infrastructure\Notifications.cs" />
+    <Compile Include="infrastructure\RuleSet.cs" />
     <Compile Include="infrastructure\Stub.cs" />
     <Compile Include="infrastructure\UnitOfWork.cs" />
     <Compile Include="infrastructure\ValidationGateway.cs" />

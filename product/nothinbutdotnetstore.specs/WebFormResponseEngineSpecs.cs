@@ -37,12 +37,7 @@ namespace nothinbutdotnetstore.specs
                 sut.display(model);
 
 
-            It should_locate_the_view_that_can_display_the_report_model = () =>
-            {
-            };
-
-
-            It should_tell_the_view_to_render_itself = () =>
+            It should_tell_the_view_that_can_display_the_information_to_run_in_the_current_context = () =>
                 view.received(x => x.ProcessRequest(current_context));
   
 

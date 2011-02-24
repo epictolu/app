@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Specialized;
 using System.Web;
 using nothinbutdotnetstore.web.application;
 
@@ -16,6 +18,16 @@ namespace nothinbutdotnetstore.web.core.stubs
             {
                 object item = new Department();
                 return (InputModel) item;
+            }
+
+            public string request_name
+            {
+                get { throw new NotImplementedException(); }
+            }
+
+            public NameValueCollection payload
+            {
+                get { throw new NotImplementedException(); }
             }
         }
     }

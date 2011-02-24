@@ -9,10 +9,9 @@ namespace nothinbutdotnetstore.web.core.stubs
         public IEnumerator<RequestCommand> GetEnumerator()
         {
             yield return create_command_to_view(
-                new StoreCatalogQueries().get_products_belonging_to_department);
-
-            yield return create_command_to_view(
                 new StoreCatalogQueries().get_departments_belonging_to_department);
+            yield return create_command_to_view(
+                new StoreCatalogQueries().get_products_belonging_to_department);
 
             yield return create_command_to_view(
                 new StoreCatalogQueries().get_main_departments);

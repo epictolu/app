@@ -9,7 +9,7 @@ namespace nothinbutdotnetstore.specs
 {
     public class FallsInRangeSpecs
     {
-        public abstract class when_validating_an_property : Observes<FallsInRangeAttribute>
+        public abstract class when_validating_an_property : Observes<IntegerFallsInRangeAttribute>
         {
             Establish c = () =>
             {
@@ -17,7 +17,7 @@ namespace nothinbutdotnetstore.specs
                 item_property = an<ItemProperty>();
                 start = 18;
                 end = 50;
-                create_sut_using(() => new FallsInRangeAttribute(start, end));
+                create_sut_using(() => new IntegerFallsInRangeAttribute(start, end));
                 add_pipeline_behaviour_against_sut(x => x.property_to_validate = item_property);
             };
 
@@ -27,7 +27,7 @@ namespace nothinbutdotnetstore.specs
             static PropertyInfo property_info;
         }
 
-        [Subject(typeof(FallsInRangeAttribute))]
+        [Subject(typeof(IntegerFallsInRangeAttribute))]
         public class property_value_is_in_range : when_validating_an_property
         {
             Establish c = () =>
@@ -37,7 +37,7 @@ namespace nothinbutdotnetstore.specs
                 result.ShouldBeTrue();
         }
 
-        [Subject(typeof(FallsInRangeAttribute))]
+        [Subject(typeof(IntegerFallsInRangeAttribute))]
         public class property_value_is_below_the_range : when_validating_an_property
         {
             Establish c = () =>
@@ -48,7 +48,7 @@ namespace nothinbutdotnetstore.specs
         }
 
 
-        [Subject(typeof(FallsInRangeAttribute))]
+        [Subject(typeof(IntegerFallsInRangeAttribute))]
         public class property_value_is_above_the_range : when_validating_an_property
         {
             Establish c = () =>
@@ -64,9 +64,5 @@ namespace nothinbutdotnetstore.specs
         static bool result;
 
     }
-    //public class ItemToValidate
-    //{
-    //    public string some_other_name { get; set; }
-    //}
     
 }

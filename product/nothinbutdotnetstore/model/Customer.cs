@@ -14,7 +14,7 @@ namespace nothinbutdotnetstore.model
         public string address { get; set; }
         public string state { get; set; }
 
-        [FallsInRange(18,50)]
+        [IntegerFallsInRange(18,50)]
         public int age { get; set; }
     }
 }

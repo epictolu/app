@@ -4,6 +4,7 @@ using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Extensions;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.infrastructure;
+using nothinbutdotnetstore.infrastructure.validation;
 using nothinbutdotnetstore.specs.utility;
 using Rhino.Mocks;
 
@@ -22,7 +23,7 @@ namespace nothinbutdotnetstore.specs
             Establish c = () =>
             {
                 notification_factory = the_dependency<NotificationFactory>();
-                validator_registry = the_dependency<ValidatorRegistry>();
+                rule_registry = the_dependency<RuleRegistry>();
                 one_notification = an<Notifications>();
                 all_the_notifications = an<Notifications>();
                 rules = ObjectFactory.create_a_set_of(100, an<Rule<TheItem>>).ToList();
@@ -32,7 +33,7 @@ namespace nothinbutdotnetstore.specs
                 notification_factory.Stub(x => x.create_empty())
                     .Return(all_the_notifications);
 
-                validator_registry.Stub(x => x.all_rules_for<TheItem>())
+                rule_registry.Stub(x => x.all_rules_for<TheItem>())
                     .Return(rules);
             };
 
@@ -49,7 +50,7 @@ namespace nothinbutdotnetstore.specs
             static Notifications all_the_notifications;
             static TheItem our_item;
             static NotificationFactory notification_factory;
-            static ValidatorRegistry validator_registry;
+            static RuleRegistry rule_registry;
             static IList<Rule<TheItem>> rules;
             static Notifications one_notification;
         }

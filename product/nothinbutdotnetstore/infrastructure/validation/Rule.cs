@@ -1,4 +1,4 @@
-namespace nothinbutdotnetstore.infrastructure
+namespace nothinbutdotnetstore.infrastructure.validation
 {
     public interface Rule<Item>
     {

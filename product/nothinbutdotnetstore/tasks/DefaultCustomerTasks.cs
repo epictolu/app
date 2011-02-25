@@ -1,5 +1,6 @@
 using System;
 using nothinbutdotnetstore.infrastructure;
+using nothinbutdotnetstore.infrastructure.validation;
 using nothinbutdotnetstore.model;
 
 namespace nothinbutdotnetstore.tasks

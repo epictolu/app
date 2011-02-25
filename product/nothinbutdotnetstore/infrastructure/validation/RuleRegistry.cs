@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace nothinbutdotnetstore.infrastructure
+namespace nothinbutdotnetstore.infrastructure.validation
 {
-    public interface ValidatorRegistry
+    public interface RuleRegistry
     {
         IEnumerable<Rule<Item>> all_rules_for<Item>();
     }

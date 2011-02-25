@@ -1,4 +1,4 @@
-namespace nothinbutdotnetstore.infrastructure
+﻿namespace nothinbutdotnetstore.infrastructure.stubs
 {
     public class Stub
     {

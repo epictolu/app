@@ -1,5 +1,3 @@
-using nothinbutdotnetstore.model;
-
 namespace nothinbutdotnetstore.infrastructure
 {
     public interface UnitOfWork

@@ -1,6 +1,7 @@
  using Machine.Specifications;
  using Machine.Specifications.DevelopWithPassion.Rhino;
  using nothinbutdotnetstore.infrastructure;
+ using nothinbutdotnetstore.infrastructure.validation;
  using nothinbutdotnetstore.model;
  using nothinbutdotnetstore.tasks;
  using Rhino.Mocks;

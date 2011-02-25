@@ -112,6 +112,9 @@
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="CustomerTasksSpecs.cs" />
+    <Compile Include="ExpressionSpecs.cs" />
+    <Compile Include="RequiredDetailSpecs.cs" />
+    <Compile Include="utility\ExpressionUtility.cs" />
     <Compile Include="ValidationGatewaySpecs.cs" />
     <Compile Include="LogSpecs.cs" />
     <Compile Include="QueryForSpecs.cs" />

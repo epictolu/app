@@ -83,7 +83,10 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="DefaultCalculator.cs" />
+    <Compile Include="infrastructure\ItemProperty.cs" />
+    <Compile Include="infrastructure\PropertyAccessor.cs" />
     <Compile Include="infrastructure\stubs\Stub.cs" />
+    <Compile Include="infrastructure\validation\attributes\MemberInformation .cs" />
     <Compile Include="infrastructure\validation\attributes\RequiredDetailAttribute.cs" />
     <Compile Include="infrastructure\validation\DefaultValidationGateway.cs" />
     <Compile Include="infrastructure\NotificationsFactory.cs" />

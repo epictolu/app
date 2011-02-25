@@ -24,15 +24,4 @@ namespace nothinbutdotnetstore.infrastructure.validation.attributes
             return true;
         }
     }
-
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
-    public class BornAfterAttribute : Attribute
-    {
-        int year;
-
-        public BornAfterAttribute(int year)
-        {
-            this.year = year;
-        }
-    }
 }

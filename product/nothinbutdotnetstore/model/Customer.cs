@@ -9,11 +9,12 @@ namespace nothinbutdotnetstore.model
         public string name { get; set; }
 
         [RequiredDetail]
-        [BornAfter(1977)]
         public DateTime birth_day { get; set; }
 
         public string address { get; set; }
         public string state { get; set; }
+
+        [FallsInRange(18,50)]
         public int age { get; set; }
     }
 }

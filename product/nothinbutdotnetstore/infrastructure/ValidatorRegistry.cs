@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace nothinbutdotnetstore.infrastructure
 {
     public interface ValidatorRegistry
     {
-        Validator<ItemToValidate> get_validator_for<ItemToValidate>();
+        IEnumerable<Rule<Item>> all_rules_for<Item>();
     }
 }

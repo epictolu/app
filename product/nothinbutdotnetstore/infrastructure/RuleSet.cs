@@ -4,7 +4,6 @@ namespace nothinbutdotnetstore.infrastructure
 {
     public interface RuleSet<ItemToCheck>
     {
-        bool is_broken_by(ItemToCheck item);
-        IEnumerable<string> all_messages();
+        IEnumerable<Rule<ItemToCheck>> rules_broken_by(ItemToCheck item);
     }
 }

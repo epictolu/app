@@ -51,6 +51,8 @@
   <ItemGroup>
     <None Include="build.bat" />
     <None Include="build\build_utilities.rb" />
+    <None Include="build\connection_details.rb" />
+    <None Include="build\connection_details.rb.customize" />
     <None Include="build\local_properties.rb" />
     <None Include="build\local_properties.rb.customize" />
     <None Include="build\project.rb" />

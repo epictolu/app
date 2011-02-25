@@ -10,7 +10,7 @@ using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs
 {
-    public class DefaultValidationGatewaySpecs
+    public class ValidationGatewaySpecs
     {
         public abstract class concern : Observes<ValidationGateway,
                                             DefaultValidationGateway>
@@ -22,15 +22,15 @@ namespace nothinbutdotnetstore.specs
         {
             Establish c = () =>
             {
-                notification_factory = the_dependency<NotificationFactory>();
+                notifications_factory = the_dependency<NotificationsFactory>();
                 rule_registry = the_dependency<RuleRegistry>();
-                one_notification = an<Notifications>();
+                one_set_of_notifications = an<Notifications>();
                 all_the_notifications = an<Notifications>();
                 rules = ObjectFactory.create_a_set_of(100, an<Rule<TheItem>>).ToList();
                 our_item = new TheItem();
-                rules.each(x => x.Stub(y => y.apply_to(our_item)).Return(one_notification));
+                rules.each(x => x.Stub(y => y.apply_to(our_item)).Return(one_set_of_notifications));
 
-                notification_factory.Stub(x => x.create_empty())
+                notifications_factory.Stub(x => x.create_empty())
                     .Return(all_the_notifications);
 
                 rule_registry.Stub(x => x.all_rules_for<TheItem>())
@@ -41,7 +41,7 @@ namespace nothinbutdotnetstore.specs
                 result = sut.validate(our_item);
 
             It should_append_the_rule_messages_for_all_validation_rules_to_the_notification = () =>
-                all_the_notifications.received(x => x.append(one_notification));
+                all_the_notifications.received(x => x.append(one_set_of_notifications));
 
             It should_return_the_notifications = () =>
                 result.ShouldEqual(all_the_notifications);
@@ -49,10 +49,10 @@ namespace nothinbutdotnetstore.specs
             static Notifications result;
             static Notifications all_the_notifications;
             static TheItem our_item;
-            static NotificationFactory notification_factory;
+            static NotificationsFactory notifications_factory;
             static RuleRegistry rule_registry;
             static IList<Rule<TheItem>> rules;
-            static Notifications one_notification;
+            static Notifications one_set_of_notifications;
         }
 
         public class TheItem

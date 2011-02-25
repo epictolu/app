@@ -112,7 +112,7 @@
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="CustomerTasksSpecs.cs" />
-    <Compile Include="DefaultValidationGatewaySpecs.cs" />
+    <Compile Include="ValidationGatewaySpecs.cs" />
     <Compile Include="LogSpecs.cs" />
     <Compile Include="QueryForSpecs.cs" />
     <Compile Include="ViewProductsInADepartmentSpecs.cs" />

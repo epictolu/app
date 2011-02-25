@@ -1,6 +1,6 @@
 namespace nothinbutdotnetstore.infrastructure
 {
-    public interface NotificationFactory
+    public interface NotificationsFactory
     {
         Notifications create_empty();
     }

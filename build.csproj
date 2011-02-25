@@ -62,6 +62,13 @@
     <None Include="product\config\log4net.config.xml.erb" />
     <None Include="product\config\our_custom_config.txt.erb" />
     <None Include="product\docs\project_conventions.markdown" />
+    <None Include="product\sql\ddl\001\001_db.sql.erb" />
+    <None Include="product\sql\ddl\001\002_security.sql.erb" />
+    <None Include="product\sql\ddl\001\003_asp_login.sql.erb" />
+    <None Include="product\sql\ddl\001\004_create_table_foo.sql.erb" />
+    <None Include="product\sql\ddl\001\005_create_app_tables.sql.erb" />
+    <None Include="product\sql\ddl\001\006_create_app_constraints.sql.erb" />
+    <None Include="product\sql\ddl\001\007_create_app_grants.sql.erb.ignore" />
     <None Include="push_latest_work.ps1" />
     <None Include="rakefile.rb" />
     <None Include="start_new_exercise.ps1" />
@@ -88,10 +95,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="product\sql\data\001\" />
-    <Folder Include="product\sql\ddl\001\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="product\sql\ddl\001\001_db.sql" />
+    <Content Include="product\sql\ddl\001\002_security.sql" />
+    <Content Include="product\sql\ddl\001\003_asp_login.sql" />
+    <Content Include="product\sql\ddl\001\004_create_table_foo.sql" />
+    <Content Include="product\sql\ddl\001\005_create_app_tables.sql" />
+    <Content Include="product\sql\ddl\001\006_create_app_constraints.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

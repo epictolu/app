@@ -84,6 +84,7 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="DefaultCalculator.cs" />
     <Compile Include="infrastructure\stubs\Stub.cs" />
+    <Compile Include="infrastructure\validation\attributes\RequiredDetailAttribute.cs" />
     <Compile Include="infrastructure\validation\DefaultValidationGateway.cs" />
     <Compile Include="infrastructure\NotificationsFactory.cs" />
     <Compile Include="infrastructure\Notifications.cs" />

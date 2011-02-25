@@ -111,6 +111,7 @@
     <Compile Include="BasicHandlerSpecs.cs" />
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
+    <Compile Include="FallsInRangeSpecs.cs" />
     <Compile Include="CustomerTasksSpecs.cs" />
     <Compile Include="ExpressionSpecs.cs" />
     <Compile Include="RequiredDetailSpecs.cs" />

@@ -60,8 +60,6 @@
     <None Include="product\config\app.config.erb" />
     <None Include="product\config\hibernate.cfg.xml.erb" />
     <None Include="product\config\log4net.config.xml.erb" />
-    <None Include="product\config\our_custom_config.txt.erb" />
-    <None Include="product\docs\project_conventions.markdown" />
     <None Include="product\sql\ddl\001\001_db.sql.erb" />
     <None Include="product\sql\ddl\001\002_security.sql.erb" />
     <None Include="product\sql\ddl\001\003_asp_login.sql.erb" />
@@ -69,6 +67,7 @@
     <None Include="product\sql\ddl\001\005_create_app_tables.sql.erb" />
     <None Include="product\sql\ddl\001\006_create_app_constraints.sql.erb" />
     <None Include="product\sql\ddl\001\007_create_app_grants.sql.erb.ignore" />
+    <None Include="push" />
     <None Include="push_latest_work.ps1" />
     <None Include="rakefile.rb" />
     <None Include="start_new_exercise.ps1" />

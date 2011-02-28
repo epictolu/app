@@ -7,14 +7,9 @@ CodeFile="DepartmentBrowser.aspx.cs"
     <p class="ListHead">Select An Department</p>
             <table>            
               <%--each department should go here--%>
-              <%
-                  foreach (var department in this.report_model)
-                  {%>
               <tr class="ListItem">
-                 <td><%=department.name%></td>
+                 <td>Department Name</td>
            	  </tr>        
-              <%
-                  }%>
       	    </table>            
 </asp:Content>
 

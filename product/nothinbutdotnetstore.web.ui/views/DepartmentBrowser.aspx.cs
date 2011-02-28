@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using nothinbutdotnetstore.web.application;
-using nothinbutdotnetstore.web.core.aspnet;
+using System.Web.UI;
 
 namespace nothinbutdotnetstore.web.ui.views
 {
-    public partial class DepartmentBrowser : BasicViewFor<IEnumerable<Department>>
+    public partial class DepartmentBrowser : Page
     {
     }
 }

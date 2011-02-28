@@ -81,66 +81,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
-    <Compile Include="DefaultCalculator.cs" />
-    <Compile Include="infrastructure\ItemProperty.cs" />
-    <Compile Include="infrastructure\PropertyAccessor.cs" />
-    <Compile Include="infrastructure\stubs\Stub.cs" />
-    <Compile Include="infrastructure\validation\attributes\IntegerFallsInRangeAttribute.cs" />
-    <Compile Include="infrastructure\validation\attributes\MemberInformation .cs" />
-    <Compile Include="infrastructure\validation\attributes\RequiredDetailAttribute.cs" />
-    <Compile Include="infrastructure\validation\DefaultValidationGateway.cs" />
-    <Compile Include="infrastructure\NotificationsFactory.cs" />
-    <Compile Include="infrastructure\Notifications.cs" />
-    <Compile Include="infrastructure\validation\Rule.cs" />
-    <Compile Include="infrastructure\UnitOfWork.cs" />
-    <Compile Include="infrastructure\validation\ValidationGateway.cs" />
-    <Compile Include="infrastructure\validation\RuleRegistry.cs" />
     <Compile Include="MessageGenerator.cs" />
-    <Compile Include="model\Customer.cs" />
-    <Compile Include="tasks\CustomerTasks.cs" />
-    <Compile Include="tasks\DefaultCustomerTasks.cs" />
-    <Compile Include="tasks\ItemQuery.cs" />
-    <Compile Include="tasks\StoreCatalog.cs" />
-    <Compile Include="tasks\stubs\StubStoreCatalog.cs" />
-    <Compile Include="web\application\AddNewCustomer.cs" />
-    <Compile Include="web\core\aspnet\BasicViewFor.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="web\core\aspnet\PageFactory.cs" />
-    <Compile Include="web\core\aspnet\ViewFor.cs" />
-    <Compile Include="web\core\aspnet\ViewFactory.cs" />
-    <Compile Include="web\core\aspnet\ViewPathRegistry.cs" />
-    <Compile Include="web\core\aspnet\WebFormResponseEngine.cs" />
-    <Compile Include="web\core\aspnet\CurrentContextResolver.cs" />
-    <Compile Include="web\core\aspnet\WebFormViewFactory.cs" />
-    <Compile Include="web\core\Log.cs" />
-    <Compile Include="web\core\LoggingRequestFactory.cs" />
-    <Compile Include="web\core\QueryFor.cs" />
-    <Compile Include="web\application\StoreCatalogController.cs" />
-    <Compile Include="web\application\ViewProductsInADepartment.cs" />
-    <Compile Include="web\application\Product.cs" />
-    <Compile Include="web\application\Department.cs" />
-    <Compile Include="web\application\ViewDepartmentsInADepartment.cs" />
-    <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
-    <Compile Include="web\core\ApplicationCommand .cs" />
-    <Compile Include="web\core\aspnet\BasicHandler.cs" />
-    <Compile Include="web\core\CommandRegistry.cs" />
-    <Compile Include="web\core\DefaultCommandRegistry.cs" />
-    <Compile Include="web\core\DefaultFrontController.cs" />
-    <Compile Include="web\core\DefaultRequestCommand.cs" />
-    <Compile Include="web\core\DispatchingCommand.cs" />
-    <Compile Include="web\core\FrontController.cs" />
-    <Compile Include="web\core\ItemViewer .cs" />
-    <Compile Include="web\core\MissingRequestCommand.cs" />
-    <Compile Include="web\core\Request.cs" />
-    <Compile Include="web\core\RequestCommand.cs" />
-    <Compile Include="web\core\RequestCriteria.cs" />
-    <Compile Include="web\core\RequestFactory.cs" />
-    <Compile Include="web\core\stubs\StoreCatalogQueries.cs" />
-    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
-    <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
-    <Compile Include="web\core\stubs\StubViewPathRegistry.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

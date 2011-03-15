@@ -1,5 +1,5 @@
+ using developwithpassion.specifications.rhino;
  using Machine.Specifications;
- using Machine.Specifications.DevelopWithPassion.Rhino;
 
 namespace nothinbutdotnetstore.specs
 {   

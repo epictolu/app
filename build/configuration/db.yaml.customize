@@ -1,0 +1,6 @@
+db:
+  database_path: C:/tempfiles/databases 
+  osql_exe: osql
+  database_provider: System.Data.SqlClient
+  web_user_account: NT Authority\\Network Service
+  osql_args_prior_to_file_name: -b -i

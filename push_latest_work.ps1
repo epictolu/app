@@ -1,4 +1,4 @@
-function verify_on_master()
+function verify_not_on_master()
 {
   $status = git status
 
@@ -9,10 +9,10 @@ function verify_on_master()
   }
 }
 
-verify_on_master()
+verify_not_on_master
 git add -A
 git commit -m "Pushing new changes"
-verify_on_master()
+verify_not_on_master
 git push origin
 
 

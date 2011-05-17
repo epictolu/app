@@ -50,8 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="build.bat" />
-    <None Include="build\local_properties.rb.customize" />
-    <None Include="build\project.rb" />
+    <None Include="docs\conventions.markdown" />
     <None Include="fetch_latest" />
     <None Include="push" />
     <None Include="push_latest_work.ps1" />
@@ -79,7 +78,9 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="build\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>

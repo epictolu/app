@@ -9,6 +9,12 @@ function exit_if_on_the_master_branch()
   }
 }
 
+function checkout($branch_name)
+{
+  git checkout -b $branch_name
+  git checkout $branch_name
+}
+
 function exit_if_not_on_the_master_branch()
 {
   $status = git status

@@ -10,7 +10,7 @@ git checkout master
 
 exit_if_not_on_the_master_branch
 
-git checkout -b $new_branch_name
+checkout($new_branch_name)
 git pull jp master
 echo "new branch name:$new_branch_name"
 

@@ -4,8 +4,8 @@ configs =
   {
     :runner_options => ["-x","example"],
     :assemblies => dynamic{Dir.glob("#{configatron.artifacts_dir}/*specs.dll")},
-    :dir => "artifacts/specs",
-    :report_dir => "artifacts/specs/report",
+    :dir => delayed{File.join(configatron.artifacts_dir,"specs")},
+    :report_dir => delayed{File.join(configatron.specs.dir,"report")},
     :tools_folder => File.join(Dir.glob("packages/Machine.Specifications.*").first,"tools")
   }
 }

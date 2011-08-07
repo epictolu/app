@@ -50,6 +50,21 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="build.bat" />
+    <None Include="build\configuration\db.rb" />
+    <None Include="build\configuration\db_dev.rb" />
+    <None Include="build\configuration\git.rb" />
+    <None Include="build\configuration\machine_specs.rb" />
+    <None Include="build\configuration\project.rb" />
+    <None Include="build\tasks\git.rb" />
+    <None Include="build\tasks\machine_specs.rb" />
+    <None Include="build\tasks\templates.rb" />
+    <None Include="build\utils\configatron.rb" />
+    <None Include="build\utils\file.rb" />
+    <None Include="build\utils\msbuild_runner.rb" />
+    <None Include="build\utils\sevenzip.rb" />
+    <None Include="build\utils\string.rb" />
+    <None Include="build\utils\template_file.rb" />
+    <None Include="build\utils\unique_files.rb" />
     <None Include="docs\conventions.markdown" />
     <None Include="fetch_latest" />
     <None Include="push" />
@@ -78,9 +93,7 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="build\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>

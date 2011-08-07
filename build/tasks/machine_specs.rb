@@ -6,7 +6,7 @@ namespace :specs do
 
   desc 'run the specs for the project'
   task :run  => [:init,:expand_all_template_files,'build:rebuild'] do
-    Dir.glob("#{configatron.specs.tools_folder}/*.*").each do|file|
+    configatron.all_references.each do|file|
       FileUtils.cp(file,configatron.artifacts_dir)
     end
 

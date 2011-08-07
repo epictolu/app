@@ -36,6 +36,7 @@ class TemplateFile
 	end
 
   def expand(output_file = "",args={})
+    puts "About to process #{@file}"
     template = prepare_template(File.read(@file))
     result = process_template(template,args)
 

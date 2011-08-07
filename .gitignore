@@ -28,3 +28,4 @@ source/*.web.ui/*.txt
 *.orig
 local_properties.rb
 connection_details.rb
+README.markdown

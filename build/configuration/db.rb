@@ -3,11 +3,12 @@ task :configure_db do
   {
     :db => 
     {
-      :initial_catalog => delayed{configatron.project},
       :server_name => ENV['HOSTNAME'],
       :osql_connection_string => delayed{"-E \-S #{configatron.db.server_name}"},
-      :web_account_sql => "#{configatron.db.web_user_account}, N'#{configatron.db.web_user_account}'",
-      :app_connection => "data source=Server;Integrated Security=SSPI;Initial Catalog=blah"
+      :osql_exe => "osql",
+      :database_provider => "System.Data.SqlClient",
+      :app_connection => "data source=#{delayed{configatron.db.server_name}};Integrated Security=SSPI;Initial Catalog=#{delayed{configatron.db.initial_catalog}}",
+      :osql_args_prior_to_file_name => "-b -i"
     }
   }
 

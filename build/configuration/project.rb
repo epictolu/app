@@ -1,7 +1,7 @@
 config = 
 {
   :course_name => missing("course_name",__FILE__),
-  :project => missing("project",__FILE__),
+  :project => "nothinbutdotnetstore",
   :target => "Debug",
   :source_dir => missing("source_dir",__FILE__),
   :app_dir => missing("app_dir",__FILE__),

@@ -1,3 +1,5 @@
+. .\psh_git_utils.ps1
+
 function install_utilities()
 {
   gem install bundler
@@ -6,10 +8,16 @@ function install_utilities()
 
 function configure_remote()
 {
-  `git remote rm jp`
-  `git remote add jp git://github.com/<%= configatron.git.user %>/<%= configatron.git.repo %>.git`
+  git remote rm jp
+  git remote add jp git://github.com/<%= configatron.git.user %>/<%= configatron.git.repo %>.git
 end
+}
+
+function create_first_branch()
+{
+  checkout("start_of_week")
 }
 
 install_utilities
 configure_remote
+create_first_branch

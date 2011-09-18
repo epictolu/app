@@ -1,0 +1,15 @@
+function install_utilities()
+{
+  gem install bundler
+  bundle install
+}
+
+function configure_remote()
+{
+  `git remote rm jp`
+  `git remote add jp git://github.com/<%= configatron.git.user %>/<%= configatron.git.repo %>.git`
+end
+}
+
+install_utilities
+configure_remote

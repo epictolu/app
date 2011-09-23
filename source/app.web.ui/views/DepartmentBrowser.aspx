@@ -1,6 +1,6 @@
 <%@ MasterType VirtualPath="App.master" %>
 <%@ Page Language="C#" AutoEventWireup="true" 
-Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser"
+Inherits="app.web.ui.views.DepartmentBrowser"
 CodeFile="DepartmentBrowser.aspx.cs"
  MasterPageFile="App.master" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">

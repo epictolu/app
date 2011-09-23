@@ -4,7 +4,7 @@
 						<table id="Table7" cellspacing="0" cellpadding="3" width="792" border="0">
 							<tr>
 								<td colspan="2" align="left">
-									<p /><b class="h1">Ordering from NothinButDotNetStore.com is quick and easy</b><br/>
+									<p /><b class="h1">Ordering from App.com is quick and easy</b><br/>
 
 									<p />
 										<asp:Label id="lblError" runat="server" EnableViewState="False" ForeColor="#C04000" Width="149px"></asp:Label>

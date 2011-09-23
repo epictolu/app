@@ -1,7 +1,7 @@
 config = 
 {
   :course_name => missing('course_name',__FILE__),
-  :project => "nothinbutdotnetstore",
+  :project => "app",
   :target => "Debug",
   :source_dir => "source",
   :all_references => UniqueFiles.new(Dir.glob("packages/**/*.{dll,exe}")).all_files,

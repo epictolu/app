@@ -1,4 +1,4 @@
-﻿namespace nothinbutdotnetstore
+﻿namespace app
 {
     public class MessageGenerator
     {

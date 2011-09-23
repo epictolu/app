@@ -8,8 +8,8 @@
     <ProjectGuid>{DF3A63F9-8783-4FDA-8A31-76667E114CEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nothinbutdotnetstore.specs</RootNamespace>
-    <AssemblyName>nothinbutdotnetstore.specs</AssemblyName>
+    <RootNamespace>app.specs</RootNamespace>
+    <AssemblyName>app.specs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -84,9 +84,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\nothinbutdotnetstore\nothinbutdotnetstore.csproj">
+    <ProjectReference Include="..\app\app.csproj">
       <Project>{922EF2FE-820B-4ED5-9D64-7D716E135719}</Project>
-      <Name>nothinbutdotnetstore</Name>
+      <Name>app</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

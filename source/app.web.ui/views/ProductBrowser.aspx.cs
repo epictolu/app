@@ -1,6 +1,6 @@
 using System.Web.UI;
 
-namespace nothinbutdotnetstore.web.ui.views
+namespace app.web.ui.views
 {
     public partial class ProductBrowser : Page
     {

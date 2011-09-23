@@ -1,7 +1,7 @@
 using developwithpassion.specifications.rhinomocks;
 using Machine.Specifications;
 
-namespace nothinbutdotnetstore.specs
+namespace app.specs
 {
     public class MessageGeneratorSpecs
     {

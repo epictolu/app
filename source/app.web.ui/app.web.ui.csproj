@@ -83,7 +83,7 @@
     <Content Include="views\ProductSearch.ascx" />
     <Content Include="views\shoppingcart.aspx" />
     <Content Include="views\ShoppingCartSidebar.ascx" />
-    <Content Include="views\appDirectory.aspx" />
+    <Content Include="views\StoreDirectory.aspx" />
     <Content Include="styles.css" />
     <Content Include="views\UpdatePrices.aspx" />
   </ItemGroup>

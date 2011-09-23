@@ -1,6 +1,6 @@
-<%@ MasterType virtualPath="Store.master" %>
+<%@ MasterType virtualPath="App.master" %>
 <%@ Page Language="c#" 
-    Inherits="System.Web.UI.Page"    MasterPageFile="Store.master"    
+    Inherits="System.Web.UI.Page"    MasterPageFile="App.master"    
     enableViewStateMac="True" %>
 <asp:Content runat="server" id="contentPlaceHolder" ContentPlaceHolderId="childContentPlaceHolder">
     <div align="center">

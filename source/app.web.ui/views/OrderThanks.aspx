@@ -1,6 +1,6 @@
-<%@ MasterType VirtualPath="Store.master" %>
+<%@ MasterType VirtualPath="App.master" %>
 <%@ Page Language="c#" enableViewStateMac="True" 
- MasterPageFile="Store.master"%>
+ MasterPageFile="App.master"%>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
 
 			<table id="Table1" style="WIDTH: 516px; HEIGHT: 602px" width="516" border="0" runat="server">

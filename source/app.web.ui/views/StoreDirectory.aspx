@@ -1,5 +1,5 @@
-<%@ MasterType VirtualPath="Store.master" %>
-<%@ Page Language="c#" Inherits="System.Web.UI.Page" MasterPageFile="Store.master"%>
+<%@ MasterType VirtualPath="App.master" %>
+<%@ Page Language="c#" Inherits="System.Web.UI.Page" MasterPageFile="App.master"%>
 
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
 

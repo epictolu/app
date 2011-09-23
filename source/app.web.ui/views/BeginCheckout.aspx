@@ -1,4 +1,4 @@
-<%@ Page Language="c#" Inherits="System.Web.UI.Page"    MasterPageFile="Store.master" %>
+<%@ Page Language="c#" Inherits="System.Web.UI.Page"    MasterPageFile="App.master" %>
     
     <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
 						<table id="Table7" cellspacing="0" cellpadding="3" width="792" border="0">

@@ -1,5 +1,5 @@
-<%@ MasterType VirtualPath="Store.master" %>
-<%@ Page Language="c#" validateRequest="false" Inherits="System.Web.UI.Page"  MasterPageFile="Store.master" %>
+<%@ MasterType VirtualPath="App.master" %>
+<%@ Page Language="c#" validateRequest="false" Inherits="System.Web.UI.Page"  MasterPageFile="App.master" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
             <div id="errorsDiv" runat="server">
                 <asp:BulletedList id="errorsList" runat="server" CssClass="errorText"></asp:BulletedList>

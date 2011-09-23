@@ -1,6 +1,6 @@
-<%@ MasterType virtualPath="Store.master" %>
+<%@ MasterType virtualPath="App.master" %>
 <%@ Page Language="c#" 
-MasterPageFile="Store.master" Inherits="System.Web.UI.Page"  %>
+MasterPageFile="App.master" Inherits="System.Web.UI.Page"  %>
 <asp:Content id="content" runat="server" ContentPlaceHolderId="childContentPlaceHolder">
 							<table width="97%" border="0" cellpadding="4" cellspacing="0" class="box3">
 								<tr valign="top">

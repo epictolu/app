@@ -1,4 +1,4 @@
-!#/usr/bin/env ruby
+#!/usr/bin/env ruby
 
 require_relative 'git_utils.rb'
 
@@ -20,7 +20,7 @@ end
 
 exit_if_not_on_the_master_branch
 
-checkout($new_branch_name)
+checkout(new_branch_name)
 `git pull jp master`
 puts "new branch name:#{new_branch_name}"
 

@@ -1,8 +1,8 @@
 def exit_if_on_the_master_branch
-  status = `git status`
+  status = `git branch`
 
   if (/\* master/ =~ status)
-    "You need to run this on a non master branch"
+    puts "You need to run this on a non master branch"
     exit
   end
 end
@@ -14,10 +14,10 @@ end
 
 def exit_if_not_on_the_master_branch
 
-  status = `git status`
+  status = `git branch`
 
   if (/\* master/ !~ status)
-    "You need to run this on a master branch"
+    puts "You need to run this on a master branch"
     exit
   end
 

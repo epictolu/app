@@ -68,10 +68,11 @@
     <None Include="docs\conventions.markdown" />
     <None Include="fetch_latest" />
     <None Include="push" />
-    <None Include="push_latest_work.ps1" />
     <None Include="rakefile.rb" />
+    <None Include="run_first" />
+    <None Include="save_my_changes" />
     <None Include="source\config\web.config.erb" />
-    <None Include="start_new_exercise.ps1" />
+    <None Include="start_new_exercise" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

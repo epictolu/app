@@ -1,6 +1,6 @@
 config = 
 {
-  :course_name => missing('course_name',__FILE__),
+  :course_name => 'Developer Bootcamp',
   :project => "app",
   :target => "Debug",
   :source_dir => "source",

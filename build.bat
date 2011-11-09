@@ -1,3 +1,3 @@
 @echo off
 cls
-rake %*
+rake build:compile

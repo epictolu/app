@@ -12,4 +12,5 @@ namespace :specs do
 
     sh "#{configatron.artifacts_dir}/mspec-clr4.exe", "--html", "#{configatron.specs.report_dir}/#{configatron.project}.specs.html", *(configatron.specs.runner_options + configatron.specs.assemblies)
   end
+
 end

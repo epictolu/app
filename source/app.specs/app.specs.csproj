@@ -125,6 +125,6 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>cd $(SolutionDir)
-build copy_config_files</PostBuildEvent>
+rake copy_config_files</PostBuildEvent>
   </PropertyGroup>
 </Project>

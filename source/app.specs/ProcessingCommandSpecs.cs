@@ -1,4 +1,5 @@
-﻿ using Machine.Specifications;
+﻿ using System;
+ using Machine.Specifications;
  using app.web.core;
  using developwithpassion.specifications.rhinomocks;
  using developwithpassion.specifications.extensions;
@@ -20,13 +21,15 @@ namespace app.specs
 
       Establish c = () =>
       {
+        var type = depends.on(typeof(string));
         request = fake.an<IProvideDetailsForACommand>();
+        request.setup(x => x.GetType()).Return(type);
       };
 
       Because b = () =>
         result = sut.can_handle(request);
 
-      It should_ = () =>
+        It should_correctly_determine_if_it_can_handle_the_request = () => result.ShouldBeTrue();
         
 
       static IProvideDetailsForACommand request;

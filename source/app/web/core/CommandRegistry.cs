@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using app.web.core.stubs;
 
 namespace app.web.core
 {
@@ -12,6 +13,10 @@ namespace app.web.core
     {
       this.all_commands = all_commands;
       this.the_missing_command = the_missing_command;
+    }
+
+    public CommandRegistry():this(new StubSetOfCommands(),new StubMissingCommand())
+    {
     }
 
     public IProcessOneRequest get_the_command_that_can_process(IProvideDetailsForACommand request)

@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.web.core.stubs;
 
 namespace app.web.core
 {
@@ -11,6 +12,10 @@ namespace app.web.core
     {
       this.front_controller = front_controller;
       this.request_factory = request_factory;
+    }
+
+    public BasicHandler():this(new FrontController(),new StubRequestFactory())
+    {
     }
 
     public void ProcessRequest(HttpContext context)

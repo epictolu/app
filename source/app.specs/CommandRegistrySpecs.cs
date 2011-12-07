@@ -63,9 +63,9 @@ namespace app.specs
           depends.on(the_missing_command);
         };
 
+
         Because b = () =>
           result = sut.get_the_command_that_can_process(request);
-
 
 
         It should_return_the_missing_command_to_the_caller = () =>

@@ -2,6 +2,5 @@
 {
   public interface IProvideDetailsForACommand
   {
-      bool CanBeHandledBy(IProcessOneRequest request);
   }
 }

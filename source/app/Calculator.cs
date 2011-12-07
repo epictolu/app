@@ -16,9 +16,10 @@ namespace app
     public int add(int first, int second)
     {
       ensure_all_are_positive(first, second);
+      using(connection)
+      using(var command = connection.CreateCommand())
       connection.Open();
-       IDbCommand command =  connection.CreateCommand();
-        command.ExecuteNonQuery();
+      connection.CreateCommand().ExecuteNonQuery();
       return first + second;
     }
 

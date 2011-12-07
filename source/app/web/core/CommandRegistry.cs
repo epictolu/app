@@ -5,17 +5,19 @@ namespace app.web.core
 {
   public class CommandRegistry : IFindCommands
   {
-    public IEnumerable<IProcessOneRequest> all_commands;
+    IEnumerable<IProcessOneRequest> all_commands;
+    IProcessOneRequest the_missing_command;
 
-    public CommandRegistry(IEnumerable<IProcessOneRequest> all_commands)
+    public CommandRegistry(IEnumerable<IProcessOneRequest> all_commands, IProcessOneRequest the_missing_command)
     {
       this.all_commands = all_commands;
+      this.the_missing_command = the_missing_command;
     }
 
     public IProcessOneRequest get_the_command_that_can_process(IProvideDetailsForACommand request)
 
     {
-      return all_commands.First(x => x.can_handle(request));
+      return all_commands.FirstOrDefault(x => x.can_handle(request)) ?? the_missing_command;
     }
   }
 }

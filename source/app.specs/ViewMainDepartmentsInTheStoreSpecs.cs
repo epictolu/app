@@ -22,12 +22,17 @@ namespace app.specs
       Establish c = () =>
       {
         department_list = depends.on<IFindDepartments>();
+        request = fake.an<IProvideDetailsForACommand>();
       };
+
+      Because b = () =>
+        sut.run(request);
 
       It should_get_the_list_of_the_main_departments = () =>
         department_list.received(x => x.get_main_departments());
 
       static IFindDepartments department_list;
+      static IProvideDetailsForACommand request;
     }
   }
 

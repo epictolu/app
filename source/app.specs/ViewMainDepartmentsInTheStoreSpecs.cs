@@ -1,8 +1,9 @@
-﻿ using Machine.Specifications;
- using app.web.application;
- using app.web.core;
- using developwithpassion.specifications.rhinomocks;
- using developwithpassion.specifications.extensions;
+﻿ using System.Collections.Generic;
+using app.web.application;
+using app.web.core;
+using developwithpassion.specifications.extensions;
+using developwithpassion.specifications.rhinomocks;
+using Machine.Specifications;
 
 namespace app.specs
 {  
@@ -18,10 +19,24 @@ namespace app.specs
    
     public class when_run : concern
     {
-      It should_get_the_list_of_the_main_departments = () =>        
+      Establish c = () =>
+      {
+        department_list = depends.on<IFindDepartments>();
+      };
 
+      It should_get_the_list_of_the_main_departments = () =>
+        department_list.received(x => x.get_main_departments());
 
-        
+      static IFindDepartments department_list;
     }
+  }
+
+  interface IFindDepartments
+  {
+    IEnumerable<IContainDepartmentInformation> get_main_departments();
+  }
+
+  interface IContainDepartmentInformation
+  {
   }
 }

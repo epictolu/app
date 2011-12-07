@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
+using System.Security;
+using System.Threading;
 
 namespace app
 {
@@ -32,7 +34,7 @@ namespace app
 
     public void shut_off()
     {
-      throw new NotImplementedException();
+      if(! Thread.CurrentPrincipal.IsInRole("Epic Role")) throw new SecurityException();
     }
   }
 }

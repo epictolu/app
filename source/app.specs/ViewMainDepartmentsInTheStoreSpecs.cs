@@ -31,12 +31,12 @@ namespace app.specs
     }
   }
 
-  interface IFindDepartments
+  public interface IFindDepartments
   {
     IEnumerable<IContainDepartmentInformation> get_main_departments();
   }
 
-  interface IContainDepartmentInformation
+  public interface IContainDepartmentInformation
   {
   }
 }

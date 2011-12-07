@@ -9,6 +9,7 @@ config =
   :config_dir => "source/config",
   :app_dir => delayed{"source/#{configatron.project}.web.ui"},
   :log_file_name => delayed{"#{configatron.project}_log.txt"},
-  :log_level => "DEBUG"
+  :log_level => "DEBUG",
+  :our_custom_settings => "This is cool"
 }
 configatron.configure_from_hash config

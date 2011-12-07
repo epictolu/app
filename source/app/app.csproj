@@ -79,6 +79,13 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="web\core\BasicHandler.cs" />
+    <Compile Include="web\core\FrontController.cs" />
+    <Compile Include="web\core\ICreateControllerRequests.cs" />
+    <Compile Include="web\core\IFindCommands.cs" />
+    <Compile Include="web\core\IProcessOneRequest.cs" />
+    <Compile Include="web\core\IProcessRequests.cs" />
+    <Compile Include="web\core\IProvideDetailsForACommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

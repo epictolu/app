@@ -35,13 +35,14 @@ namespace app.specs
 
           depends.on<IEnumerable<IProcessOneRequest>>(all_commands);
         };
+
         Because b = () =>
           result = sut.get_the_command_that_can_process(request);
 
 
 
         It should_return_the_command_to_the_caller = () =>
-          result.ShouldEqual(the_command_that_can_process)
+          result.ShouldEqual(the_command_that_can_process);
 
         static IProcessOneRequest result;
         static IProcessOneRequest the_command_that_can_process;

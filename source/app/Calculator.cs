@@ -6,12 +6,16 @@ namespace app
 {
   public class Calculator
   {
+    readonly IDbConnection connection;
+
     public Calculator(IDbConnection  connection)
     {
+        this.connection = connection;
     }
 
     public int add(int first, int second)
     {
+      connection.Open();
       ensure_all_are_positive(first, second);
       return first + second;
     }

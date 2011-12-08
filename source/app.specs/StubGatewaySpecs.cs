@@ -1,35 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Machine.Specifications;
+﻿using Machine.Specifications;
 using app.web.core;
-using developwithpassion.specifications.rhinomocks;
+using developwithpassion.specifications.extensions;
 
 namespace app.specs
 {
-    [Subject(typeof(StubGateway))]
-    public class StubGatewaySpecs
+  [Subject(typeof(Stub))]
+  public class StubGatewaySpecs
+  {
+    public abstract class concern
     {
-        public abstract class concern
-        {
-        }
+    }
 
-        public class when_asked_for_a_stub_display_engine : concern
-        {
-            Establish c = () =>
-            {
-               
-            };
+    public class when_asked_for_a_stub : concern
+    {
+      Establish c = () =>
+      {
+      };
 
-            private Because b = () => result = StubGateway.Create<StubDisplayEngine>();
+      Because b = () =>
+        result = Stub.with<AStub>();
 
-            private It should_return_a_stub_display_engine =
-                () => result.GetType().IsInstanceOfType(typeof (StubDisplayEngine));
+      It should_return_the_stub_instance =
+        () => result.ShouldBeAn<AStub>();
 
-            private static StubDisplayEngine result;
-        }
-   }
+      static AStub result;
+    }
 
-    public delegate void MyDelegate();
+    public class AStub
+    {
+    }
+  }
 }

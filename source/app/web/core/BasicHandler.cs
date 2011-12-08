@@ -14,7 +14,7 @@ namespace app.web.core
       this.request_factory = request_factory;
     }
 
-    public BasicHandler():this(new FrontController(),new StubRequestFactory())
+    public BasicHandler():this(new FrontController(),Stub.with<StubRequestFactory>()))
     {
     }
 

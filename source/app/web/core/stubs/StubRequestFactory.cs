@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.web.application.models;
 
 namespace app.web.core.stubs
 {
@@ -11,6 +12,7 @@ namespace app.web.core.stubs
 
     class StubRequest : IProvideDetailsForACommand
     {
+      public DepartmentItem department { get; set; }
     }
   }
 }

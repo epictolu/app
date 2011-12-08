@@ -83,6 +83,7 @@
     <Compile Include="web\application\models\DepartmentItem.cs" />
     <Compile Include="web\application\IFindDepartments.cs" />
     <Compile Include="web\application\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="web\application\ViewDepartmentsInADepartment.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />

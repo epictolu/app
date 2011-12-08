@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="StubGateway.cs" />
     <Compile Include="web\application\models\DepartmentItem.cs" />
     <Compile Include="web\application\IFindDepartments.cs" />
     <Compile Include="web\application\stubs\StubDepartmentRepository.cs" />

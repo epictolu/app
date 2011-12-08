@@ -13,6 +13,10 @@ namespace app.web.application
       this.query = new Query();
     }
 
+    public ViewReport():this(Stub.with<StubDisplayEngine>())
+    {
+    }
+
     public void run(IProvideDetailsForACommand request)
     {
       display_engine.display(query.fetch_using(request));

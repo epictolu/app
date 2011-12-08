@@ -1,6 +1,6 @@
 ﻿using Machine.Specifications;
+using Rhino.Mocks;
 using app.web.application;
-using app.web.application.models;
 using app.web.core;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
@@ -9,8 +9,16 @@ namespace app.specs
 {
   public class ViewReportSpecs
   {
-    public abstract class concern : Observes<ISupportAStory, ViewReport<OurModel>>
+    public abstract class concern : Observes<ISupportAStory, ViewReport<OurModel,TheQuery>>
     {
+    }
+
+    public class TheQuery : IFetchInformation<OurModel>
+    {
+      public OurModel fetch_using(IProvideDetailsForACommand request)
+      {
+        return new OurModel();
+      }
     }
 
     public class when_run : concern
@@ -23,19 +31,14 @@ namespace app.specs
         display_engine = depends.on<IDisplayReports>();
         the_model = new OurModel();
 
-        query = depends.on<IFetchInformation<OurModel>>();
-
         request = fake.an<IProvideDetailsForACommand>();
-
-        query.setup(x => x.fetch_using(request)).Return(the_model);
       };
 
       Because of = () => sut.run(request);
 
       It should_display_the_products_for_the_department = () =>
-        display_engine.received(x => x.display(the_model));
+        display_engine.received(x => x.display(Arg<OurModel>.Is.NotNull));
 
-      static IFetchInformation<OurModel> query;
       static OurModel the_model;
     }
 

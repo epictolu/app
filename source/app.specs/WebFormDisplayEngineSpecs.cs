@@ -18,9 +18,10 @@ namespace app.specs
     {
       Establish c = () =>
       {
-        the_report = new Report();
         view_factory = depends.on<ICreateViewInstances>();
+        the_report = new Report();
       };
+
       Because b = () =>
         sut.display(the_report);
 

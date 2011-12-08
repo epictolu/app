@@ -1,4 +1,5 @@
 ﻿using app.web.core;
+using app.web.core.aspnet;
 
 namespace app.web.application
 {
@@ -13,7 +14,7 @@ namespace app.web.application
       this.query = new Query();
     }
 
-    public ViewReport():this(Stub.with<StubDisplayEngine>())
+    public ViewReport():this(new WebFormDisplayEngine())
     {
     }
 

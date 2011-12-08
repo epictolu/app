@@ -81,13 +81,11 @@
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="Stub.cs" />
     <Compile Include="web\application\models\ProductItem.cs" />
-    <Compile Include="web\application\ViewProductsInDepartment.cs" />
     <Compile Include="web\application\models\DepartmentItem.cs" />
     <Compile Include="web\application\IFindStoreInformation.cs" />
     <Compile Include="web\application\stubs\StubStoreCatalog.cs" />
-    <Compile Include="web\application\ViewDepartmentsInADepartment.cs" />
-    <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\ViewReport.cs" />
+    <Compile Include="web\core\aspnet\GetTheCurrentHttpContext.cs" />
     <Compile Include="web\core\aspnet\ICreateViewInstances.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\BasicHandler.cs" />
@@ -104,7 +102,6 @@
     <Compile Include="web\core\ProcessingCommand.cs" />
     <Compile Include="web\core\RequestMatch.cs" />
     <Compile Include="web\core\RequestQuery.cs" />
-    <Compile Include="web\core\StubDisplayEngine.cs" />
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />

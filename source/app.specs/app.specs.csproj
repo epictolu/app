@@ -121,9 +121,6 @@
     <Compile Include="ProcessingCommandSpecs.cs" />
     <Compile Include="StubGatewaySpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
-    <Compile Include="ViewDepartmentsInADepartmentSpecs.cs" />
-    <Compile Include="ViewMainDepartmentsInTheStoreSpecs.cs" />
-    <Compile Include="ViewProductsInADepartmentSpecs.cs" />
     <Compile Include="ViewReportSpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
   </ItemGroup>

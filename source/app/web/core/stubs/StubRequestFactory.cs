@@ -12,7 +12,11 @@ namespace app.web.core.stubs
 
     class StubRequest : IProvideDetailsForACommand
     {
-      public DepartmentItem department { get; set; }
+      public InputModel map<InputModel>()
+      {
+        object item = new DepartmentItem();
+        return (InputModel) item;
+      }
     }
   }
 }

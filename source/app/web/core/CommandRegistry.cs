@@ -15,7 +15,7 @@ namespace app.web.core
       this.the_missing_command = the_missing_command;
     }
 
-    public CommandRegistry():this(new StubSetOfCommands(),new StubMissingCommand())
+    public CommandRegistry():this(Stub.with<StubSetOfCommands>(),Stub.with<StubMissingCommand>())
     {
     }
 

@@ -14,7 +14,7 @@ namespace app.web.application
       this.display_engine = display_engine;
     }
 
-    public ViewMainDepartmentsInTheStore():this(new StubDepartmentRepository(),new StubDisplayEngine())
+    public ViewMainDepartmentsInTheStore():this(Stub.with<StubDepartmentRepository>(),Stub.with<StubDisplayEngine>())
     {
     }
 

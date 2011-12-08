@@ -7,7 +7,7 @@ namespace app.web.core
     public void display<ReportModel>(ReportModel report)
     {
       HttpContext.Current.Items.Add("blah",report);
-      HttpContext.Current.Server.Transfer("~/views/DepartmentBrowser.aspx", true);
+      HttpContext.Current.Server.Transfer("~/views/ProductBrowser.aspx", true);
     }
   }
 }

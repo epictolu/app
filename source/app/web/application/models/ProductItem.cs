@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace app.web.application.models
+﻿namespace app.web.application.models
 {
-    public class ProductItem
-    {
-    }
+  public class ProductItem
+  {
+    public string name { get; set; }
+  }
 }

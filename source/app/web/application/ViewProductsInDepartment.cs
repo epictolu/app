@@ -5,24 +5,24 @@ using app.web.core;
 namespace app.web.application
 {
   public class ViewProductsInADepartment : ISupportAStory
-               
+
   {
-      private IFindProducts product_repository;
-      private IDisplayReports display_engine;
+    IFindStoreInformation store_catalog;
+    IDisplayReports display_engine;
 
-      public ViewProductsInADepartment(IFindProducts productRepository, IDisplayReports displayEngine)
-      {
-          product_repository = productRepository;
-          display_engine = displayEngine;
-      }
+    public ViewProductsInADepartment(IFindStoreInformation store_catalog, IDisplayReports displayEngine)
+    {
+      this.store_catalog = store_catalog;
+      display_engine = displayEngine;
+    }
 
-      public void run(IProvideDetailsForACommand request)
-      {
-          var department_item = request.map<DepartmentItem>();
+    public ViewProductsInADepartment() : this(Stub.with<StubStoreCatalog>(), Stub.with<StubDisplayEngine>())
+    {
+    }
 
-          var product_list = product_repository.GetProductList(department_item);
-
-          display_engine.display(product_list);
-      }
+    public void run(IProvideDetailsForACommand request)
+    {
+      display_engine.display(store_catalog.all_products_in(request.map<DepartmentItem>()));
+    }
   }
 }

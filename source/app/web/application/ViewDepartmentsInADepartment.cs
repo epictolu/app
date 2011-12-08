@@ -6,22 +6,22 @@ namespace app.web.application
 {
   public class ViewDepartmentsInADepartment : ISupportAStory
   {
-    IFindDepartments department_repository;
+    IFindStoreInformation store_catalog;
     IDisplayReports display_engine;
 
-    public ViewDepartmentsInADepartment(IFindDepartments department_repository, IDisplayReports display_engine)
+    public ViewDepartmentsInADepartment(IFindStoreInformation store_catalog, IDisplayReports display_engine)
     {
-      this.department_repository = department_repository;
+      this.store_catalog = store_catalog;
       this.display_engine = display_engine;
     }
 
-    public ViewDepartmentsInADepartment():this(Stub.with<StubDepartmentRepository>(),Stub.with<StubDisplayEngine>())
+    public ViewDepartmentsInADepartment():this(Stub.with<StubStoreCatalog>(),Stub.with<StubDisplayEngine>())
     {
     }
 
     public void run(IProvideDetailsForACommand request)
     {
-      display_engine.display(department_repository.get_departments_for_a_department(request.map<DepartmentItem>()));
+      display_engine.display(store_catalog.get_departments_for_a_department(request.map<DepartmentItem>()));
     }
   }
 }

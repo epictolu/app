@@ -21,11 +21,11 @@ namespace app.specs
       Establish c = () =>
       {
         display_engine = depends.on<IDisplayReports>();
-        department_repository = depends.on<IFindDepartments>();
+        store_information_repository = depends.on<IFindStoreInformation>();
         request = fake.an<IProvideDetailsForACommand>();
         the_main_departments = new List<DepartmentItem> {new DepartmentItem()};
 
-        department_repository.setup(x => x.get_main_departments())
+        store_information_repository.setup(x => x.get_main_departments())
           .Return(the_main_departments);
       };
 
@@ -35,7 +35,7 @@ namespace app.specs
       It should_display_the_list_of_the_main_departments = () =>
         display_engine.display(the_main_departments);
 
-      static IFindDepartments department_repository;
+      static IFindStoreInformation store_information_repository;
       static IProvideDetailsForACommand request;
       static IEnumerable<DepartmentItem> the_main_departments;
       static IDisplayReports display_engine;

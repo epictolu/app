@@ -3,44 +3,44 @@ using Machine.Specifications;
 using app.web.application;
 using app.web.application.models;
 using app.web.core;
-using developwithpassion.specifications.rhinomocks;
 using developwithpassion.specifications.extensions;
-
+using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-    [Subject(typeof(ViewProductsInADepartment))]
-    public class ViewProductsInADepartmentSpecs
+  [Subject(typeof(ViewProductsInADepartment))]
+  public class ViewProductsInADepartmentSpecs
+  {
+    public abstract class concern : Observes<ISupportAStory, ViewProductsInADepartment>
     {
-        public abstract class concern : Observes<ISupportAStory,ViewProductsInADepartment>
-        {
-        }
+    }
 
-        public class when_run : concern
-        {
+    public class when_run : concern
+    {
+      static IDisplayReports display_engine;
+      static IProvideDetailsForACommand request;
+      static ProductItem product_item;
 
-            private static IDisplayReports display_engine;
-            private static IProvideDetailsForACommand request;
-            private static ProductItem product_item;
+      Establish c = () =>
+      {
+        display_engine = depends.on<IDisplayReports>();
+        var product_repository = depends.on<IFindStoreInformation>();
+        department_item = fake.an<DepartmentItem>();
 
-            Establish c = () =>
-                              {
-                                  request = fake.an<IProvideDetailsForACommand>();
-                                  request.setup(x => x.map<DepartmentItem>()).Return(department_Item);
+        request = fake.an<IProvideDetailsForACommand>();
+        request.setup(x => x.map<DepartmentItem>()).Return(department_item);
+        product_list = new List<ProductItem> {new ProductItem()};
 
-                                  var productRepository = depends.on<IFindProducts>();
-                                  productRepository.setup(x => x.GetProductList(department_Item)).Return(product_list);
+        product_repository.setup(x => x.all_products_in(department_item)).Return(product_list);
+      };
 
-                                  display_engine = depends.on<IDisplayReports>();
-                              };
+      Because of = () => sut.run(request);
 
-            Because of = () => sut.run(request);
+      It should_display_the_products_for_the_department = () =>
+        display_engine.received(x => x.display(product_list));
 
-
-            It should_display_the_products_for_the_department = () =>
-                display_engine.received(x => x.display(product_list));
-
-            private static DepartmentItem department_Item;
-            private static IEnumerable<ProductItem> product_list;
-        }}
+      static DepartmentItem department_item;
+      static IEnumerable<ProductItem> product_list;
+    }
+  }
 }

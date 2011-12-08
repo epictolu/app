@@ -80,12 +80,11 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="Stub.cs" />
-    <Compile Include="web\application\IFindProducts.cs" />
     <Compile Include="web\application\models\ProductItem.cs" />
     <Compile Include="web\application\ViewProductsInDepartment.cs" />
     <Compile Include="web\application\models\DepartmentItem.cs" />
-    <Compile Include="web\application\IFindDepartments.cs" />
-    <Compile Include="web\application\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="web\application\IFindStoreInformation.cs" />
+    <Compile Include="web\application\stubs\StubStoreCatalog.cs" />
     <Compile Include="web\application\ViewDepartmentsInADepartment.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\BasicHandler.cs" />

@@ -1,9 +1,9 @@
 ﻿using System.Web;
-using app.web.core.stubs;
+using app.infrastructure.containers;
 
 namespace app.web.core
 {
-  public class BasicHandler: IHttpHandler
+  public class BasicHandler : IHttpHandler
   {
     IProcessRequests front_controller;
     ICreateControllerRequests request_factory;
@@ -14,7 +14,8 @@ namespace app.web.core
       this.request_factory = request_factory;
     }
 
-    public BasicHandler():this(new FrontController(),Stub.with<StubRequestFactory>())
+    public BasicHandler() : this(Container.fetch.a<IProcessRequests>(),
+                                 Container.fetch.a<ICreateControllerRequests>())
     {
     }
 

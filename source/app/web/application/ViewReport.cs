@@ -14,9 +14,6 @@ namespace app.web.application
       this.query = new Query();
     }
 
-    public ViewReport():this(new WebFormDisplayEngine())
-    {
-    }
 
     public void run(IProvideDetailsForACommand request)
     {

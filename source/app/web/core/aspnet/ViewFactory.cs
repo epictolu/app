@@ -15,9 +15,6 @@ namespace app.web.core.aspnet
       this.page_factory = page_factory;
     }
 
-    public ViewFactory():this(Stub.with<StubViewPathRegistry>(),BuildManager.CreateInstanceFromVirtualPath)
-    {
-    }
 
     public IHttpHandler create_view_that_can_display<ReportModel>(ReportModel the_report)
     {

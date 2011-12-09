@@ -15,9 +15,6 @@ namespace app.web.core
       this.the_missing_command = the_missing_command;
     }
 
-    public CommandRegistry():this(Stub.with<StubSetOfCommands>(),Stub.with<StubMissingCommand>())
-    {
-    }
 
     public IProcessOneRequest get_the_command_that_can_process(IProvideDetailsForACommand request)
 

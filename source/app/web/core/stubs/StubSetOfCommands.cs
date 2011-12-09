@@ -15,12 +15,13 @@ namespace app.web.core.stubs
 
     public IEnumerator<IProcessOneRequest> GetEnumerator()
     {
-      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewProductsRequest>(),
-                                         new ViewReport<IEnumerable<ProductItem>,GetTheProductsInADepartment>());
-      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewMainDepartmentsRequest>(),
-                                         new ViewReport<IEnumerable<DepartmentItem>,GetMainDepartments>());
-      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewSubDepartmentsRequest>(),
-                                         new ViewReport<IEnumerable<DepartmentItem>,GetDepartmentsInDepartment>());
+      yield break;
+//      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewProductsRequest>(),
+//                                         new ViewReport<IEnumerable<ProductItem>,GetTheProductsInADepartment>());
+//      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewMainDepartmentsRequest>(),
+//                                         new ViewReport<IEnumerable<DepartmentItem>,GetMainDepartments>());
+//      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewSubDepartmentsRequest>(),
+//                                         new ViewReport<IEnumerable<DepartmentItem>,GetDepartmentsInDepartment>());
 
     }
   }

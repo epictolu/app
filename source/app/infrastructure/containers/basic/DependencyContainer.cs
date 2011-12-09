@@ -2,9 +2,16 @@
 {
   public class DependencyContainer :IFetchDependencies
   {
-    public Dependency a<Dependency>()
-    {
-      throw new System.NotImplementedException();
-    }
+    IFindDependencyFactories dependency_finder;
+
+      public DependencyContainer(IFindDependencyFactories dependency_finder)
+      {
+          this.dependency_finder = dependency_finder;
+      }
+
+      public Dependency a<Dependency>()
+      {
+          return (Dependency) dependency_finder.get_factory_that_can_create(typeof(Dependency)).create();
+      }
   }
 }

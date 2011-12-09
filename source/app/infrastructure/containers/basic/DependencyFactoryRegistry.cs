@@ -4,18 +4,28 @@ using System.Linq;
 
 namespace app.infrastructure.containers.basic
 {
-  public class DependencyFactoryRegistry : IFindDependencyFactories
-  {
-    IEnumerable<ICreateASingleDependency> factories;
-
-    public DependencyFactoryRegistry(IEnumerable<ICreateASingleDependency> factories)
+    public class DependencyFactoryRegistry : IFindDependencyFactories
     {
-      this.factories = factories;
-    }
+        IEnumerable<ICreateASingleDependency> factories;
+        readonly MissingDependencyFactoryException exception;
 
-    public ICreateASingleDependency get_factory_that_can_create(Type dependency)
-    {
-      return factories.First(x => x.can_create(dependency));
+        public DependencyFactoryRegistry(IEnumerable<ICreateASingleDependency> factories,
+                                         MissingDependencyFactoryException exception)
+        {
+            this.factories = factories;
+            this.exception = exception;
+        }
+
+        public ICreateASingleDependency get_factory_that_can_create(Type dependency)
+        {
+            try
+            {
+                return factories.First(x => x.can_create(dependency));
+            }
+            catch
+            {
+                throw exception.Invoke(dependency);
+            }
+        }
     }
-  }
 }

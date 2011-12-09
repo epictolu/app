@@ -16,7 +16,6 @@ CodeFile="DepartmentBrowser.aspx.cs"
                <td><a href="<%= Url.to.run<ViewProductsRequest>()
                                       .or_else<ViewSubDepartmentsRequest>()
                                       .based_on(department.has_products)
-                                      .include(deparment,x => x.id)
                                        %>"><%= department.name %></a></td>
            	  </tr>        
               <% } %>

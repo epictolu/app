@@ -118,6 +118,7 @@
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
+    <Compile Include="DependencyFactoryRegistrySpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="LogSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />

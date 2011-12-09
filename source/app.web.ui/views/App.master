@@ -1,6 +1,7 @@
 <%@ Register TagPrefix="App" TagName="ShoppingCart" src="shoppingcartsidebar.ascx"  %>
 <%@ Register TagPrefix="App" TagName="Footer" src="Footer.ascx" %>
 <%@ Master Language="C#" AutoEventWireup="true" %>
+<%@ Import Namespace="app.web.application" %>
 <%@ Import Namespace="app.web.core.stubs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/DTD/xhtml1-transitional.dtd">

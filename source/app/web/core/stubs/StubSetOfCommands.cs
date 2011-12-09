@@ -15,11 +15,11 @@ namespace app.web.core.stubs
 
     public IEnumerator<IProcessOneRequest> GetEnumerator()
     {
-      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewMainDepartmentsRequest>(),
+      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewProductsRequest>(),
                                          new ViewReport<IEnumerable<ProductItem>,GetTheProductsInADepartment>());
-      yield return new ProcessingCommand(x => true,
+      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewMainDepartmentsRequest>(),
                                          new ViewReport<IEnumerable<DepartmentItem>,GetMainDepartments>());
-      yield return new ProcessingCommand(x => true,
+      yield return new ProcessingCommand(IncomingRequest.was.made_for<ViewSubDepartmentsRequest>(),
                                          new ViewReport<IEnumerable<DepartmentItem>,GetDepartmentsInDepartment>());
 
     }
@@ -44,7 +44,7 @@ namespace app.web.core.stubs
   {
     public IEnumerable<ProductItem> fetch_using(IProvideDetailsForACommand request)
     {
-      return Stub.with<StubStoreCatalog>().all_products_in(request.map<DepartmentItem>());
+      return Stub.with<StubStoreCatalog>().all_products_in(request.map<ViewProductsRequest>());
     }
   }
 }

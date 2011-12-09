@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using app.web.application.models;
-using app.web.core.stubs;
 
 namespace app.web.application.stubs
 {
@@ -17,7 +16,7 @@ namespace app.web.application.stubs
       return Enumerable.Range(1, 100).Select(x => new DepartmentItem {name = x.ToString("Sub Department 0")});
     }
 
-    public IEnumerable<ProductItem> all_products_in(DepartmentItem departmentItem)
+    public IEnumerable<ProductItem> all_products_in(ViewProductsRequest departmentItem)
     {
       return Enumerable.Range(1, 100).Select(x => new ProductItem {name = x.ToString("Product 0")});
     }

@@ -1,4 +1,4 @@
-﻿namespace app.web.core.stubs
+﻿namespace app.web.application
 {
   public class ViewSubDepartmentsRequest
   {

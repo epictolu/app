@@ -3,6 +3,7 @@
 Inherits="app.web.ui.views.DepartmentBrowser"
 CodeFile="DepartmentBrowser.aspx.cs"
  MasterPageFile="App.master" %>
+<%@ Import Namespace="app.web.application" %>
 <%@ Import Namespace="app.web.application.models" %>
 <%@ Import Namespace="app.web.core.stubs" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">

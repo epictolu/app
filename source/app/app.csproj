@@ -113,8 +113,9 @@
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
     <Compile Include="web\core\stubs\StubViewPathRegistry.cs" />
-    <Compile Include="web\core\stubs\ViewMainDepartmentsRequest.cs" />
-    <Compile Include="web\core\stubs\ViewSubDepartmentsRequest.cs" />
+    <Compile Include="web\application\ViewMainDepartmentsRequest.cs" />
+    <Compile Include="web\application\ViewProductsRequest.cs" />
+    <Compile Include="web\application\ViewSubDepartmentsRequest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

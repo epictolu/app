@@ -13,10 +13,6 @@ CodeFile="DepartmentBrowser.aspx.cs"
                  {%>
               <tr class="ListItem">
                 
-               <td><a href="<%= Url.to.run<ViewProductsRequest>()
-                                      .or_else<ViewSubDepartmentsRequest>()
-                                      .based_on(department.has_products)
-                                       %>"><%= department.name %></a></td>
            	  </tr>        
               <% } %>
       	    </table>            

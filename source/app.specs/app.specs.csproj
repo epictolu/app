@@ -117,6 +117,7 @@
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="CommandRegistrySpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
+    <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="ProcessingCommandSpecs.cs" />
     <Compile Include="StubGatewaySpecs.cs" />

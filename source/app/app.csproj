@@ -78,7 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="IncomingRequest.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="RequestMatchBuilder.cs" />
     <Compile Include="Stub.cs" />
     <Compile Include="web\application\models\ProductItem.cs" />
     <Compile Include="web\application\models\DepartmentItem.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="web\core\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
+    <Compile Include="web\core\IBuildRequestMatches.cs" />
     <Compile Include="web\core\ICreateControllerRequests.cs" />
     <Compile Include="web\core\IDisplayReports.cs" />
     <Compile Include="web\core\IFetchInformation.cs" />

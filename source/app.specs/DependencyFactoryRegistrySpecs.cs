@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using app.infrastructure.containers.basic;
 using developwithpassion.specifications.extensions;
@@ -37,6 +38,25 @@ namespace app.specs
 
         static ICreateASingleDependency result;
         static ICreateASingleDependency the_factory;
+      }
+      public class and_it_does_not_have_the_factory
+      {
+        Establish c = () =>
+        {
+          exception = new Exception();
+          depends.on<MissingDependencyFactoryException>(type => exception);
+          var dependency_factories = Enumerable.Range(1, 100).Select(x => fake.an<ICreateASingleDependency>()).ToList();
+
+          depends.on<IEnumerable<ICreateASingleDependency>>(dependency_factories);
+        };
+
+        Because b = () =>
+          spec.catch_exception(() => sut.get_factory_that_can_create(typeof(AnItem)));
+
+        It should_throw_the_exception_to_indicate_it_does_have_the_factory_for_a_type = () =>
+          spec.exception_thrown.ShouldEqual(exception);
+
+        static Exception exception;
       }
     }
 

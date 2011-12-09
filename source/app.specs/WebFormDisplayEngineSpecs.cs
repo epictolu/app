@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web;
+﻿using System.Web;
 using app.specs.utility;
 using app.web.core;
 using app.web.core.aspnet;
@@ -47,43 +46,4 @@ namespace app.specs
     }
   }
 
-  [Subject(typeof(ViewFactory))]
-  public class ViewFactorySpecs
-  {
-    public abstract class concern : Observes<ICreateViewInstances,
-                                      ViewFactory>
-    {
-    }
-
-    public class when_creating_a_view_that_can_display_the_report : concern
-    {
-      Establish c = () =>
-      {
-        var a_view_for_the_report = fake.an<IDisplayAReport>();
-        a_view_for_the_report.setup(x => x.can_i_handle());
-
-        depends.on<IEnumerable<IDisplayAReport>>(new[] { a_view_for_the_report });
-      };
-
-      Because of = () =>
-        sut.create_view_that_can_display(the_report);
-
-      It should_create_a_view_that_can_display_the_report = () =>
-        the_report.ShouldNotBeNull();
-
-      static IHttpHandler the_report;
-    }
-  }
-
-  public interface IDisplayAReport
-  {
-  }
-
-  public class ViewFactory : ICreateViewInstances
-  {
-    public IHttpHandler create_view_that_can_display<ReportModel>(ReportModel the_report)
-    {
-      throw new System.NotImplementedException();
-    }
-  }
 }

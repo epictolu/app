@@ -13,7 +13,7 @@ namespace app.web.core.aspnet
       this.current_context = current_context;
     }
 
-    public WebFormDisplayEngine():this(null,() => HttpContext.Current)
+    public WebFormDisplayEngine():this(new ViewFactory(),() => HttpContext.Current)
     {
     }
 

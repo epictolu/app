@@ -87,6 +87,13 @@
     <Compile Include="web\application\ViewReport.cs" />
     <Compile Include="web\core\aspnet\GetTheCurrentHttpContext.cs" />
     <Compile Include="web\core\aspnet\ICreateViewInstances.cs" />
+    <Compile Include="web\core\aspnet\IDisplayA.cs" />
+    <Compile Include="web\core\aspnet\IFindPathsToViews.cs" />
+    <Compile Include="web\core\aspnet\PageFactory.cs" />
+    <Compile Include="web\core\aspnet\SimpleReport.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\core\aspnet\ViewFactory.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
@@ -105,6 +112,7 @@
     <Compile Include="web\core\stubs\StubMissingCommand.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
+    <Compile Include="web\core\stubs\StubViewPathRegistry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

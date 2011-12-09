@@ -18,9 +18,9 @@ namespace app.web.core.stubs
       yield return new ProcessingCommand(x => true,
                                          new ViewReport<IEnumerable<ProductItem>,GetTheProductsInADepartment>());
       yield return new ProcessingCommand(x => true,
-                                         new ViewReport<IEnumerable<DepartmentItem>,GetDepartmentsInDepartment>());
-      yield return new ProcessingCommand(x => true,
                                          new ViewReport<IEnumerable<DepartmentItem>,GetMainDepartments>());
+      yield return new ProcessingCommand(x => true,
+                                         new ViewReport<IEnumerable<DepartmentItem>,GetDepartmentsInDepartment>());
 
     }
   }

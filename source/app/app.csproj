@@ -79,7 +79,9 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="infrastructure\containers\basic\DependencyContainer.cs" />
+    <Compile Include="infrastructure\containers\basic\ICreateASingleDependency.cs" />
     <Compile Include="infrastructure\containers\basic\ICreateDependencies.cs" />
+    <Compile Include="infrastructure\containers\basic\IFindDependencyFactories.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerFacadeResolver.cs" />
     <Compile Include="infrastructure\containers\IFetchDependencies.cs" />

@@ -20,8 +20,11 @@ namespace app.specs
       {
         item_created_by_the_factory = new OurItem();
 
-        var dependency_factory = depends.on<ICreateDependencies>();
-        dependency_factory.setup(x => x.create_a<OurItem>()).Return(item_created_by_the_factory);
+        dependency_factories = depends.on<IFindDependencyFactories>();
+        dependency_factory = fake.an<ICreateASingleDependency>();
+        dependency_factories.setup(x => x.get_factory_that_can_create(typeof(OurItem)))
+          .Return(dependency_factory);
+        dependency_factory.setup(x => x.create()).Return(item_created_by_the_factory);
       };
 
       Because b = () =>
@@ -31,17 +34,14 @@ namespace app.specs
         result.ShouldEqual(item_created_by_the_factory);
 
       static OurItem result;
-      static OurItem item_created_by_the_factory;
+      static object item_created_by_the_factory;
+      static ICreateASingleDependency dependency_factory;
+      static IFindDependencyFactories dependency_factories;
     }
 
     public class OurItem
     {
       
     }
-  }
-
-  public interface ICreateDependencies
-  {
-    T create_a<T>();
   }
 }

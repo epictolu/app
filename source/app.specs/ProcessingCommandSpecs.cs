@@ -29,7 +29,6 @@ namespace app.specs
 
       static IProvideDetailsForACommand request;
       static bool result;
-      static bool expected;
     }
 
     public class when_run : concern

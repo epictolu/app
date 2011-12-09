@@ -4,9 +4,9 @@ namespace app
 {
     public class RequestMatchBuilder : IBuildRequestMatches
     {
-        public RequestMatch made_for<T>()
+        public RequestMatch made_for<TRequest>()
         {
-            throw new System.NotImplementedException();
+            return x => x.GetType() == typeof (TRequest);
         }
     }
 }

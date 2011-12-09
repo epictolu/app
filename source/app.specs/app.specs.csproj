@@ -120,6 +120,7 @@
     <Compile Include="IncomingRequestSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="ProcessingCommandSpecs.cs" />
+    <Compile Include="RequestMatchBuilderSpecs.cs" />
     <Compile Include="StubGatewaySpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
     <Compile Include="ViewFactorySpecs.cs" />

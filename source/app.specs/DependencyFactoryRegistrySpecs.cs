@@ -1,6 +1,8 @@
-﻿using Machine.Specifications;
+﻿using System.Linq;
 using app.infrastructure.containers.basic;
+using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
+using Machine.Specifications;
 
 namespace app.specs
 {
@@ -19,6 +21,12 @@ namespace app.specs
         Establish c = () =>
         {
           the_factory = fake.an<ICreateASingleDependency>();
+          var dependency_factories = Enumerable.Range(1, 100).Select(x => fake.an<ICreateASingleDependency>()).ToList();
+          dependency_factories.Add(the_factory);
+
+          the_factory.setup(x => x.can_create(typeof(AnItem))).Return(true);
+
+          depends.on(dependency_factories);
         };
         Because b = () =>
           result = sut.get_factory_that_can_create(typeof(AnItem));

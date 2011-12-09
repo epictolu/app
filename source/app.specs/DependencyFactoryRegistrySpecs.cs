@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using app.infrastructure.containers.basic;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.rhinomocks;
@@ -26,7 +27,7 @@ namespace app.specs
 
           the_factory.setup(x => x.can_create(typeof(AnItem))).Return(true);
 
-          depends.on(dependency_factories);
+          depends.on<IEnumerable<ICreateASingleDependency>>(dependency_factories);
         };
         Because b = () =>
           result = sut.get_factory_that_can_create(typeof(AnItem));
